@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Navbar,Container,Nav,NavDropdown } from  'react-bootstrap';
 import './App.css';
 
 function App() {
+
+  let [shoes, shoes변경] = useState([])
+  let [가격, 가격변경] = useState(0)
   return (
     <div className="App">
       <Navbar bg="light" expand="lg">
