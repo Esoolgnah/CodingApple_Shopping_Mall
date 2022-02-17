@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap';
 import './App.css';
 import Data from './data.js';
-import 상품 from './상품.js';
 
 function App() {
   let [shoes, shoes변경] = useState(Data);
@@ -42,19 +41,28 @@ function App() {
       </div>
       <div className='container'>
         <div className='row'>
-          {shoes.map(item => {
-            return (
-              <상품
-                id={item.id}
-                image={item.image}
-                title={item.title}
-                content={item.content}
-                price={item.price}
-              />
-            );
+          {shoes.map((a, i) => {
+            return <Card shoes={a} i={i} key={i} />;
           })}
         </div>
       </div>
+    </div>
+  );
+}
+
+function Card(props) {
+  return (
+    <div className='col-md-4' key={props.id}>
+      <img
+        src={
+          'https://codingapple1.github.io/shop/shoes' + (props.i + 1) + '.jpg'
+        }
+        width='100%'
+      />
+      <h4>{props.shoes.title}</h4>
+      <p>
+        {props.shoes.content} & {props.shoes.price}
+      </p>
     </div>
   );
 }
