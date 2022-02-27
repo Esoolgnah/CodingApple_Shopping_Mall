@@ -1,0 +1,19 @@
+$메인칼라: #ff0000;
+.red {
+  color: $메인칼라;
+}
+
+@mixin 함수() {
+  background: #eeeeee;
+  padding: 15px;
+  border-radius: 5px;
+  max-width: 500px;
+  width: 100%;
+  margin: auto;
+}
+.my-alert {
+  @include 함수();
+}
+.my-alert p {
+  margin-bottom: 0;
+}
