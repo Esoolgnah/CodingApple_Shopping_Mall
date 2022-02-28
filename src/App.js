@@ -9,13 +9,12 @@ import { Link, Route, Switch } from 'react-router-dom';
 function App() {
   let [shoes, shoes변경] = useState(Data);
   let [더보기, 더보기변경] = useState(false);
-  let [shoes2, shoes2변경] = useState([]);
 
   const getShoesData = () =>
     axios
       .get('https://codingapple1.github.io/shop/data2.json')
       .then(result => {
-        shoes2변경(result.data);
+        shoes변경([...shoes, ...result.data]);
       })
       .catch(() => {
         console.log('실패');
@@ -72,21 +71,16 @@ function App() {
                 return <Card shoes={a} i={i} key={i} />;
               })}
             </div>
-            {더보기 && (
-              <div className='row'>
-                {shoes2.map((a, i) => {
-                  return <Card shoes={a} i={i + 3} key={i} />;
-                })}
-              </div>
+            {!더보기 && (
+              <button
+                className='btn btn-primary'
+                onClick={() => {
+                  더보기변경(!더보기);
+                }}
+              >
+                더 보기
+              </button>
             )}
-            <button
-              className='btn btn-primary'
-              onClick={() => {
-                더보기변경(!더보기);
-              }}
-            >
-              더 보기
-            </button>
           </div>
         </Route>
 
