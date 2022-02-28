@@ -10,20 +10,6 @@ function App() {
   let [shoes, shoes변경] = useState(Data);
   let [더보기, 더보기변경] = useState(false);
 
-  const getShoesData = () =>
-    axios
-      .get('https://codingapple1.github.io/shop/data2.json')
-      .then(result => {
-        shoes변경([...shoes, ...result.data]);
-      })
-      .catch(() => {
-        console.log('실패');
-      });
-
-  useEffect(() => {
-    if (더보기 === true) getShoesData();
-  }, [더보기]);
-
   return (
     <div className='App'>
       <Navbar bg='light' expand='lg'>
@@ -75,7 +61,14 @@ function App() {
               <button
                 className='btn btn-primary'
                 onClick={() => {
-                  더보기변경(!더보기);
+                  axios
+                    .get('https://codingapple1.github.io/shop/data2.json')
+                    .then(result => {
+                      shoes변경([...shoes, ...result.data]);
+                    })
+                    .catch(() => {
+                      console.log('실패');
+                    });
                 }}
               >
                 더 보기
@@ -86,10 +79,6 @@ function App() {
 
         <Route path='/detail/:id'>
           <Detail shoes={shoes} />
-        </Route>
-
-        <Route path='/:id'>
-          <div>아무거나 보여줘</div>
         </Route>
       </Switch>
     </div>
