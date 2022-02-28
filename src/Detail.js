@@ -16,13 +16,16 @@ function Detail(props) {
   let 찾은상품 = props.shoes.find(function (상품) {
     return 상품.id == id;
   });
-  const [alertMounted, setAlertMounted] = useState(true);
+  const [alert, alert변경] = useState(true);
 
   useEffect(() => {
     let 타이머 = setTimeout(() => {
-      setAlertMounted(false);
+      alert변경(false);
     }, 2000);
-  });
+    return () => {
+      clearTimeout(타이머);
+    };
+  }, []);
 
   return (
     <div className='container'>
@@ -30,7 +33,7 @@ function Detail(props) {
         <제목 className='red'>Detail</제목>
       </박스>
 
-      {alertMounted && (
+      {alert && (
         <div className='my-alert'>
           <p>재고가 얼마 남지 않았습니다.</p>
         </div>
