@@ -1,11 +1,6 @@
 .App {
   text-align: center;
 }
-.nav-link {
-  /* text-align: center; */
-  text-decoration: none; /* 링크의 밑줄 제거 */
-  color: inherit; /* 링크의 색상 제거 */
-}
 
 .Jumbotron {
   width: 100%;

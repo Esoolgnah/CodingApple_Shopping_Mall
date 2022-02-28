@@ -42,7 +42,7 @@ function Detail(props) {
       <div className='row'>
         <div className='col-md-6'>
           <img
-            src='https://codingapple1.github.io/shop/shoes1.jpg'
+            src={`https://codingapple1.github.io/shop/shoes${id}.jpg`}
             width='100%'
           />
         </div>

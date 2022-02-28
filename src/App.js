@@ -1,12 +1,30 @@
 import React, { useEffect, useState } from 'react';
 import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap';
 import './App.css';
+import axios from 'axios';
 import Data from './data.js';
 import Detail from './Detail.js';
 import { Link, Route, Switch } from 'react-router-dom';
 
 function App() {
   let [shoes, shoes변경] = useState(Data);
+  let [더보기, 더보기변경] = useState(false);
+  let [shoes2, shoes2변경] = useState([]);
+
+  const getShoesData = () =>
+    axios
+      .get('https://codingapple1.github.io/shop/data2.json')
+      .then(result => {
+        shoes2변경(result.data);
+      })
+      .catch(() => {
+        console.log('실패');
+      });
+
+  useEffect(() => {
+    if (더보기 === true) getShoesData();
+  }, [더보기]);
+
   return (
     <div className='App'>
       <Navbar bg='light' expand='lg'>
@@ -54,6 +72,21 @@ function App() {
                 return <Card shoes={a} i={i} key={i} />;
               })}
             </div>
+            {더보기 && (
+              <div className='row'>
+                {shoes2.map((a, i) => {
+                  return <Card shoes={a} i={i + 3} key={i} />;
+                })}
+              </div>
+            )}
+            <button
+              className='btn btn-primary'
+              onClick={() => {
+                더보기변경(!더보기);
+              }}
+            >
+              더 보기
+            </button>
           </div>
         </Route>
 
