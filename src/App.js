@@ -9,6 +9,7 @@ import { Link, Route, Switch } from 'react-router-dom';
 function App() {
   let [shoes, shoes변경] = useState(Data);
   let [더보기, 더보기변경] = useState(false);
+  let [재고, 재고변경] = useState([10, 11, 12]);
 
   return (
     <div className='App'>
