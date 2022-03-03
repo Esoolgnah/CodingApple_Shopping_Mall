@@ -52,10 +52,18 @@ function Detail(props) {
           <h4 className='pt-5'>{찾은상품.title}</h4>
           <p>{찾은상품.content}</p>
           <p>{찾은상품.price}원</p>
+
+          <Info 재고={props.재고} />
+
           <button className='btn btn-danger'>주문하기</button>
         </div>
       </div>
     </div>
   );
 }
+
+function Info(props) {
+  return <p>재고 : {props.재고[0]}</p>;
+}
+
 export default Detail;
