@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import './Detail.scss';
+import { 재고context } from './App.js';
 
 let 박스 = styled.div`
   padding: 20px;
@@ -17,6 +18,7 @@ function Detail(props) {
     return 상품.id == id;
   });
   const [alert, alert변경] = useState(true);
+  let 재고 = useContext(재고context);
 
   useEffect(() => {
     let 타이머 = setTimeout(() => {
