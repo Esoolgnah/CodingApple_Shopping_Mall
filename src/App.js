@@ -4,6 +4,7 @@ import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap';
 import './App.css';
 import axios from 'axios';
 import Data from './data.js';
+import Cart from './Cart.js';
 import Detail from './Detail.js';
 import { Link, Route, Switch } from 'react-router-dom';
 
@@ -83,6 +84,10 @@ function App() {
               </button>
             )}
           </div>
+        </Route>
+
+        <Route path='/cart'>
+          <Cart></Cart>
         </Route>
 
         <Route path='/detail/:id'>
