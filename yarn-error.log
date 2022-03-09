@@ -1,5 +1,5 @@
 Arguments: 
-  /Users/esoolgnah/.nvm/versions/node/v16.13.0/bin/node /opt/homebrew/Cellar/yarn/1.22.17/libexec/bin/yarn.js add react-transition-group
+  /Users/esoolgnah/.nvm/versions/node/v16.13.0/bin/node /opt/homebrew/Cellar/yarn/1.22.17/libexec/bin/yarn.js add redux
 
 PATH: 
   /Users/esoolgnah/.nvm/versions/node/v16.13.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/esoolgnah/.nvm/versions/node/v16.13.0/bin:/opt/homebrew/bin:/opt/homebrew/sbin
@@ -28,7 +28,7 @@ Trace:
 
 npm manifest: 
   {
-    "name": "shop",
+    "name": "my-app",
     "version": "0.1.0",
     "private": true,
     "dependencies": {
@@ -72,7 +72,19 @@ npm manifest:
         "last 1 firefox version",
         "last 1 safari version"
       ]
-    }
+    },
+    "description": "[Link](https://esoolgnah.github.io/).",
+    "main": "index.js",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/Esoolgnah/CodingApple_Shopping_Mall.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/Esoolgnah/CodingApple_Shopping_Mall/issues"
+    },
+    "homepage": "https://github.com/Esoolgnah/CodingApple_Shopping_Mall#readme"
   }
 
 yarn manifest: 

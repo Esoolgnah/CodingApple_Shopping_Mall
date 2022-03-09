@@ -1,7 +1,8 @@
 {
-  "name": "shop",
+  "name": "my-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": ".",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -11,12 +12,13 @@
     "react": "^17.0.2",
     "react-bootstrap": "^2.0.3",
     "react-dom": "^17.0.2",
+    "react-redux": "^7.2.6",
     "react-router-dom": "5",
     "react-scripts": "4.0.3",
+    "redux": "^4.1.2",
     "sass": "^1.49.9",
     "styled-components": "^5.3.3",
-    "web-vitals": "^1.0.1",
-    "homepage": "https://codingapple.com/esoolgnah/shoppingMall"
+    "web-vitals": "^1.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -43,5 +45,17 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "[Link](https://esoolgnah.github.io/).",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Esoolgnah/CodingApple_Shopping_Mall.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Esoolgnah/CodingApple_Shopping_Mall/issues"
+  },
+  "keywords": []
 }
