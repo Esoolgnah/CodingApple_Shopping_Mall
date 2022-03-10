@@ -22,7 +22,20 @@ function Cart(props) {
                 <td>{a.name}</td>
                 <td>{a.quan}</td>
                 <td>
-                  <button onClick={() => {}}>+</button>
+                  <button
+                    onClick={() => {
+                      props.dispatch({ type: '수량증가' });
+                    }}
+                  >
+                    +
+                  </button>
+                  <button
+                    onClick={() => {
+                      props.dispatch({ type: '수량감소' });
+                    }}
+                  >
+                    -
+                  </button>
                 </td>
               </tr>
             );

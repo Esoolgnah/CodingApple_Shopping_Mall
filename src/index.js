@@ -19,7 +19,12 @@ function reducer(state = 초기값, 액션) {
     let copy = [...state];
     copy[0].quan++;
     return copy;
-  } else {
+  } else if (액션.type === '수량감소') {
+    let copy = [...state];
+    if (copy[0].quan >= 1) copy[0].quan--;
+    return copy;
+  }
+  {
     return state;
   }
 }

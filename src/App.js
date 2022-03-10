@@ -73,14 +73,14 @@ function App() {
                   axios
                     .get('https://codingapple1.github.io/shop/data2.json')
                     .then(result => {
-                      shoes변경([...shoes, ...result.data]);
+                      if (result.data) shoes변경([...shoes, ...result.data]);
                     })
                     .catch(() => {
                       console.log('실패');
                     });
                 }}
               >
-                더 보기
+                More
               </button>
             )}
           </div>
