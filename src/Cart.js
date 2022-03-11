@@ -7,11 +7,13 @@ function Cart(props) {
   let history = useHistory();
   let dispatch = useDispatch();
   let state = useSelector(state => state);
+  let style = { color: 'white' };
+
   return (
     <div>
       <Table responsive>
         <thead>
-          <tr>
+          <tr style={style}>
             <th>#</th>
             <th>상품명</th>
             <th>수량</th>

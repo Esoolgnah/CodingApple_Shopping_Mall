@@ -20,10 +20,7 @@ function reducer2(state = alert초기값, 액션) {
   }
 }
 
-let 초기값 = [
-  { id: 0, name: '멋진신발', quan: 2 },
-  { id: 1, name: '멋진신발2', quan: 1 },
-];
+let 초기값 = [];
 
 function reducer(state = 초기값, 액션) {
   if (액션.type === '항목추가') {
