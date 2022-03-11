@@ -1,8 +1,10 @@
 import React from 'react';
 import { Table } from 'react-bootstrap';
+import { useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 function Cart(props) {
+  let history = useHistory();
   return (
     <div>
       <Table responsive>
@@ -49,6 +51,7 @@ function Cart(props) {
           <button
             onClick={() => {
               props.dispatch({ type: 'alert닫기' });
+              history.push('/detail/2');
             }}
           >
             닫기
