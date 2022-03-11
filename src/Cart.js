@@ -1,10 +1,12 @@
 import React from 'react';
 import { Table } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
-import { connect } from 'react-redux';
+import { connect, useDispatch, useSelector } from 'react-redux';
 
 function Cart(props) {
   let history = useHistory();
+  let dispatch = useDispatch();
+  let state = useSelector(state => state);
   return (
     <div>
       <Table responsive>
@@ -17,7 +19,7 @@ function Cart(props) {
           </tr>
         </thead>
         <tbody>
-          {props.state.map((a, i) => {
+          {state.reducer.map((a, i) => {
             return (
               <tr key={i}>
                 <td>{a.id}</td>
@@ -26,7 +28,7 @@ function Cart(props) {
                 <td>
                   <button
                     onClick={() => {
-                      props.dispatch({ type: '수량증가' });
+                      dispatch({ type: '수량증가' });
                     }}
                   >
                     +
@@ -34,7 +36,7 @@ function Cart(props) {
                   &nbsp;
                   <button
                     onClick={() => {
-                      props.dispatch({ type: '수량감소' });
+                      dispatch({ type: '수량감소' });
                     }}
                   >
                     -
@@ -50,8 +52,7 @@ function Cart(props) {
           <p>지금 구매하시면 20% 할인</p>
           <button
             onClick={() => {
-              props.dispatch({ type: 'alert닫기' });
-              history.push('/detail/2');
+              dispatch({ type: 'alert닫기' });
             }}
           >
             닫기
@@ -62,11 +63,12 @@ function Cart(props) {
   );
 }
 
-function state를props화(state) {
-  return {
-    state: state.reducer,
-    alert열렸니: state.reducer2,
-  };
-}
+// function state를props화(state) {
+//   return {
+//     state: state.reducer,
+//     alert열렸니: state.reducer2,
+//   };
+// }
 
-export default connect(state를props화)(Cart);
+// export default connect(state를props화)(Cart);
+export default Cart;
