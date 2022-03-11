@@ -6,7 +6,7 @@ import axios from 'axios';
 import Data from './data.js';
 import Cart from './Cart.js';
 import Detail from './Detail.js';
-import { Link, Route, Switch } from 'react-router-dom';
+import { Link, Route, Switch, useHistory } from 'react-router-dom';
 
 export let 재고context = React.createContext();
 
@@ -101,10 +101,17 @@ function App() {
 }
 
 function Card(props) {
+  let history = useHistory();
   let 재고 = useContext(재고context);
 
   return (
-    <div className='col-md-4' key={props.id}>
+    <div
+      className='col-md-4'
+      key={props.id}
+      onClick={() => {
+        history.push('/detail/' + props.shoes.id);
+      }}
+    >
       <img
         src={
           'https://codingapple1.github.io/shop/shoes' + (props.i + 1) + '.jpg'

@@ -27,20 +27,25 @@ let 초기값 = [
 
 function reducer(state = 초기값, 액션) {
   if (액션.type === '항목추가') {
-    let copy = [...state];
-    let copyId = copy.map(el => {
-      return el.id;
+    let found = state.findIndex(a => {
+      return a.id === 액션.데이터.id;
     });
-    if (copyId.indexOf(액션.데이터.id) === -1) copy.push(액션.데이터);
-    else copy[copyId.indexOf(액션.데이터.id)].quan++;
-    return copy;
+    if (found >= 0) {
+      let copy = [...state];
+      copy[found].quan++;
+      return copy;
+    } else {
+      let copy = [...state];
+      copy.push(액션.데이터);
+      return copy;
+    }
   } else if (액션.type === '수량증가') {
     let copy = [...state];
-    copy[0].quan++;
+    copy[액션.데이터].quan++;
     return copy;
   } else if (액션.type === '수량감소') {
     let copy = [...state];
-    if (copy[0].quan >= 1) copy[0].quan--;
+    if (copy[액션.데이터].quan >= 1) copy[액션.데이터].quan--;
     return copy;
   }
   {
