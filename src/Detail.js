@@ -36,6 +36,18 @@ function Detail(props) {
     };
   }, []);
 
+  useEffect(() => {
+    let arr = localStorage.getItem('watched');
+    if (arr === null) arr = [];
+    else arr = JSON.parse(arr);
+
+    arr.push(id);
+    arr = new Set(arr);
+    arr = [...arr];
+
+    localStorage.setItem('watched', JSON.stringify(arr));
+  }, []);
+
   return (
     <div className='container'>
       <박스>
@@ -73,7 +85,7 @@ function Detail(props) {
               history.push('/cart');
             }}
           >
-            주문하기
+            장바구니에 담기
           </button>
           &nbsp;
           <button

@@ -19,9 +19,7 @@ function reducer2(state = alert초기값, 액션) {
     return state;
   }
 }
-
 let 초기값 = [];
-
 function reducer(state = 초기값, 액션) {
   if (액션.type === '항목추가') {
     let found = state.findIndex(a => {
@@ -37,12 +35,18 @@ function reducer(state = 초기값, 액션) {
       return copy;
     }
   } else if (액션.type === '수량증가') {
+    let found = state.findIndex(a => {
+      return a.id === 액션.데이터;
+    });
     let copy = [...state];
-    copy[액션.데이터].quan++;
+    copy[found].quan++;
     return copy;
   } else if (액션.type === '수량감소') {
+    let found = state.findIndex(a => {
+      return a.id === 액션.데이터;
+    });
     let copy = [...state];
-    if (copy[액션.데이터].quan >= 1) copy[액션.데이터].quan--;
+    if (copy[found].quan >= 1) copy[found].quan--;
     return copy;
   }
   {

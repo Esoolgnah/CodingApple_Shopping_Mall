@@ -7,48 +7,52 @@ function Cart(props) {
   let history = useHistory();
   let dispatch = useDispatch();
   let state = useSelector(state => state);
-  let style = { color: 'white' };
+  let style = { color: 'black' };
 
   return (
     <div>
-      <Table responsive>
-        <thead>
-          <tr style={style}>
-            <th>#</th>
-            <th>상품명</th>
-            <th>수량</th>
-            <th>변경</th>
-          </tr>
-        </thead>
-        <tbody>
-          {state.reducer.map((a, i) => {
-            return (
-              <tr key={i}>
-                <td>{a.id}</td>
-                <td>{a.name}</td>
-                <td>{a.quan}</td>
-                <td>
-                  <button
-                    onClick={() => {
-                      dispatch({ type: '수량증가', 데이터: a.id });
-                    }}
-                  >
-                    +
-                  </button>
-                  &nbsp;
-                  <button
-                    onClick={() => {
-                      dispatch({ type: '수량감소', 데이터: a.id });
-                    }}
-                  >
-                    -
-                  </button>
-                </td>
-              </tr>
-            );
-          })}
-        </tbody>
-      </Table>
+      {state.reducer.length > 0 ? (
+        <Table responsive>
+          <thead>
+            <tr style={style}>
+              <th>#</th>
+              <th>상품명</th>
+              <th>수량</th>
+              <th>변경</th>
+            </tr>
+          </thead>
+          <tbody>
+            {state.reducer.map((a, i) => {
+              return (
+                <tr key={i}>
+                  <td>{a.id}</td>
+                  <td>{a.name}</td>
+                  <td>{a.quan}</td>
+                  <td>
+                    <button
+                      onClick={() => {
+                        dispatch({ type: '수량증가', 데이터: a.id });
+                      }}
+                    >
+                      +
+                    </button>
+                    &nbsp;
+                    <button
+                      onClick={() => {
+                        dispatch({ type: '수량감소', 데이터: a.id });
+                      }}
+                    >
+                      -
+                    </button>
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </Table>
+      ) : (
+        '장바구니가 비어있습니다.'
+      )}
       {props.alert열렸니 ? (
         <div className='my-alert'>
           <p>지금 구매하시면 20% 할인</p>
@@ -61,30 +65,8 @@ function Cart(props) {
           </button>
         </div>
       ) : null}
-      <Parent 이름='존박' 나이='20' />
     </div>
   );
-}
-
-function Parent(props) {
-  return (
-    <div>
-      <Child1 />
-      <Child2 />
-    </div>
-  );
-}
-function Child1() {
-  useEffect(() => {
-    console.log('렌더링됨1');
-  });
-  return <div>1111</div>;
-}
-function Child2() {
-  useEffect(() => {
-    console.log('렌더링됨2');
-  });
-  return <div>2222</div>;
 }
 
 // function state를props화(state) {
