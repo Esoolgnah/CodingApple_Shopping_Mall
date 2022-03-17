@@ -2,8 +2,7 @@ import { Nav } from 'react-bootstrap';
 import React, { useEffect, useState, useContext } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import styled from 'styled-components';
-import './Detail.scss';
-import { 재고context } from './App.js';
+import '../styles/pages/Detail.scss';
 import { connect } from 'react-redux';
 import { CSSTransition } from 'react-transition-group';
 
@@ -24,8 +23,6 @@ function Detail(props) {
   const [alert, alert변경] = useState(true);
   let [누른탭, 누른탭변경] = useState(0);
   let [스위치, 스위치변경] = useState(false);
-
-  let 재고 = useContext(재고context);
 
   useEffect(() => {
     let 타이머 = setTimeout(() => {
@@ -73,11 +70,9 @@ function Detail(props) {
           <h4 className='pt-5'>{찾은상품.title}</h4>
           <p>{찾은상품.content}</p>
           <p>{찾은상품.price}원</p>
-          <Info 재고={props.재고} />
           <button
             className='btn btn-danger'
             onClick={() => {
-              props.재고변경([9, 11, 12]);
               props.dispatch({
                 type: '항목추가',
                 데이터: { id: 찾은상품.id, name: 찾은상품.title, quan: 1 },
@@ -137,10 +132,6 @@ function TabContent(props) {
   if (props.누른탭 === 0) return <div>0번째 내용</div>;
   else if (props.누른탭 === 1) return <div>1번째 내용</div>;
   else if (props.누른탭 === 2) return <div>2번째 내용</div>;
-}
-
-function Info(props) {
-  return <p>재고 : {props.재고[0]}</p>;
 }
 
 function state를props화(state) {

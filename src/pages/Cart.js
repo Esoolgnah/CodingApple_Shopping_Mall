@@ -1,10 +1,8 @@
 import React, { useEffect, memo } from 'react';
 import { Table } from 'react-bootstrap';
-import { useHistory } from 'react-router-dom';
 import { connect, useDispatch, useSelector } from 'react-redux';
 
 function Cart(props) {
-  let history = useHistory();
   let dispatch = useDispatch();
   let state = useSelector(state => state);
   let style = { color: 'black' };
