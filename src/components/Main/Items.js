@@ -7,6 +7,22 @@ import Card from '../../components/Main/Card.js';
 function Items(props) {
   let [더보기, 더보기변경] = useState(false);
 
+  const getData = () => {
+    axios
+      .get('https://codingapple1.github.io/shop/data2.json')
+      .then(result => {
+        if (result.data) props.shoes변경([...props.shoes, ...result.data]);
+      })
+      .catch(() => {
+        console.log('실패');
+      });
+  };
+
+  const getDataAndHide = () => {
+    getData();
+    더보기변경(true);
+  };
+
   return (
     <div className='container'>
       <div className='row'>
@@ -16,20 +32,7 @@ function Items(props) {
       </div>
 
       {!더보기 && (
-        <button
-          className='btn btn-primary'
-          onClick={() => {
-            axios
-              .get('https://codingapple1.github.io/shop/data2.json')
-              .then(result => {
-                if (result.data)
-                  props.shoes변경([...props.shoes, ...result.data]);
-              })
-              .catch(() => {
-                console.log('실패');
-              });
-          }}
-        >
+        <button className='btn btn-primary' onClick={getDataAndHide}>
           More
         </button>
       )}
