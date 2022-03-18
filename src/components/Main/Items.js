@@ -1,11 +1,15 @@
 /* import Library */
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 /* import Component */
 import Card from '../../components/Main/Card.js';
 
 function Items(props) {
   let [더보기, 더보기변경] = useState(false);
+
+  useEffect(() => {
+    props.shoes변경([props.shoes[0], props.shoes[1], props.shoes[2]]);
+  }, []);
 
   const getData = () => {
     axios
