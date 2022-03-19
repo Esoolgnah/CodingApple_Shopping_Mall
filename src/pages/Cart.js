@@ -50,7 +50,7 @@ function Cart(props) {
                   <td>{a.quan}</td>
                   <td>
                     <button
-                      className='btn btn-primary'
+                      className='btn btn-default'
                       onClick={() => {
                         increaseData(a);
                       }}
@@ -59,7 +59,7 @@ function Cart(props) {
                     </button>
                     &nbsp;
                     <button
-                      className='btn btn-primary'
+                      className='btn btn-default'
                       onClick={() => {
                         decreaseData(a);
                       }}
@@ -68,7 +68,8 @@ function Cart(props) {
                     </button>
                   </td>
                   <td>
-                    <p
+                    <button
+                      className='btn btn-default'
                       style={{
                         fontWeight: 'bold',
                         cursor: 'pointer',
@@ -78,7 +79,7 @@ function Cart(props) {
                       }}
                     >
                       x
-                    </p>
+                    </button>
                   </td>
                 </tr>
               );

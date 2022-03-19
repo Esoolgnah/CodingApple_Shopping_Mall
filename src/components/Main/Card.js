@@ -9,6 +9,7 @@ function Card(props) {
     <div
       className='col-lg-4 col-md-6'
       key={props.id}
+      style={{ cursor: 'pointer' }}
       onClick={() => {
         history.push('/detail/' + props.shoes.id);
       }}
