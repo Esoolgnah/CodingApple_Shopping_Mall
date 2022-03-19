@@ -1,3 +1,6 @@
+/* import CSS */
+import '../styles/components/Cart/Cart.css';
+/* import Library */
 import React, { useEffect, memo } from 'react';
 import { Table } from 'react-bootstrap';
 import { connect, useDispatch, useSelector } from 'react-redux';
@@ -6,6 +9,16 @@ function Cart(props) {
   let dispatch = useDispatch();
   let state = useSelector(state => state);
   let style = { color: 'black' };
+
+  const increaseData = a => {
+    dispatch({ type: '수량증가', 데이터: a.id });
+  };
+  const decreaseData = a => {
+    dispatch({ type: '수량감소', 데이터: a.id });
+  };
+  const deleteData = a => {
+    dispatch({ type: '상품삭제', 데이터: a.id });
+  };
 
   return (
     <div>
@@ -17,6 +30,7 @@ function Cart(props) {
               <th>상품명</th>
               <th>수량</th>
               <th>변경</th>
+              <th>{/*삭제버튼*/}</th>
             </tr>
           </thead>
           <tbody>
@@ -29,7 +43,7 @@ function Cart(props) {
                   <td>
                     <button
                       onClick={() => {
-                        dispatch({ type: '수량증가', 데이터: a.id });
+                        increaseData(a);
                       }}
                     >
                       +
@@ -37,11 +51,24 @@ function Cart(props) {
                     &nbsp;
                     <button
                       onClick={() => {
-                        dispatch({ type: '수량감소', 데이터: a.id });
+                        decreaseData(a);
                       }}
                     >
                       -
                     </button>
+                  </td>
+                  <td>
+                    <p
+                      style={{
+                        fontWeight: 'bold',
+                        cursor: 'pointer',
+                      }}
+                      onClick={() => {
+                        deleteData(a);
+                      }}
+                    >
+                      x
+                    </p>
                   </td>
                 </tr>
               );

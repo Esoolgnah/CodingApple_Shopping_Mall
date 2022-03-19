@@ -1,0 +1,8 @@
+td {
+  position: relative;
+  transform: translate(0%, 15%);
+}
+button {
+  position: relative;
+  transform: translate(0%, -15%);
+}
