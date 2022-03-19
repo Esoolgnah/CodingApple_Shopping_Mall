@@ -7,7 +7,7 @@ function Card(props) {
 
   return (
     <div
-      className='col-md-4'
+      className='col-lg-4 col-md-6'
       key={props.id}
       onClick={() => {
         history.push('/detail/' + props.shoes.id);
