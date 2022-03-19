@@ -1,5 +1,6 @@
 /* import CSS */
 import '../styles/components/Cart/Cart.css';
+import notice from '../images/cartNotice.jpeg';
 /* import Library */
 import React, { useEffect, memo } from 'react';
 import { Table } from 'react-bootstrap';
@@ -26,22 +27,30 @@ function Cart(props) {
         <Table responsive>
           <thead>
             <tr style={style}>
-              <th>#</th>
-              <th>상품명</th>
-              <th>수량</th>
-              <th>변경</th>
-              <th>{/*삭제버튼*/}</th>
+              <th class='col-md-1'>#</th>
+              <th class='col-md-2'>{/*상품이미지*/}</th>
+              <th class='col-md-3'>상품명</th>
+              <th class='col-md-1'>수량</th>
+              <th class='col-md-1'>변경</th>
+              <th class='col-md-1'>{/*삭제버튼*/}</th>
             </tr>
           </thead>
           <tbody>
             {state.reducer.map((a, i) => {
               return (
                 <tr key={i}>
-                  <td>{a.id}</td>
+                  <td>
+                    <p className=' '></p>
+                    {a.id}
+                  </td>
+                  <td>
+                    <img src={a.image} width='150px' />
+                  </td>
                   <td>{a.name}</td>
                   <td>{a.quan}</td>
                   <td>
                     <button
+                      className='btn btn-primary'
                       onClick={() => {
                         increaseData(a);
                       }}
@@ -50,6 +59,7 @@ function Cart(props) {
                     </button>
                     &nbsp;
                     <button
+                      className='btn btn-primary'
                       onClick={() => {
                         decreaseData(a);
                       }}
@@ -76,7 +86,10 @@ function Cart(props) {
           </tbody>
         </Table>
       ) : (
-        '장바구니가 비어있습니다.'
+        <div id='noticeWrapper'>
+          <img className='noticeImg' src={notice} />
+          <p className='notice'>장바구니가 비어있습니다.</p>
+        </div>
       )}
       {props.alert열렸니 ? (
         <div className='my-alert'>

@@ -1,8 +1,23 @@
 td {
-  position: relative;
-  transform: translate(0%, 15%);
+  vertical-align: middle;
 }
-button {
-  position: relative;
-  transform: translate(0%, -15%);
+
+#noticeWrapper {
+  /* border: 1px solid red; */
+  display: flex;
+  position: absolute;
+  width: 100%;
+  height: 276px;
+  justify-content: center;
+}
+
+.noticeImg {
+  position: absolute;
+  width: 580px;
+  height: 100%;
+  object-fit: cover;
+}
+.notice {
+  position: absolute;
+  top: 100%;
 }

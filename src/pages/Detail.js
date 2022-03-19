@@ -75,7 +75,14 @@ function Detail(props) {
             onClick={() => {
               props.dispatch({
                 type: '항목추가',
-                데이터: { id: 찾은상품.id, name: 찾은상품.title, quan: 1 },
+                데이터: {
+                  id: 찾은상품.id,
+                  name: 찾은상품.title,
+                  quan: 1,
+                  image: `https://codingapple1.github.io/shop/shoes${
+                    찾은상품.id + 1
+                  }.jpg`,
+                },
               });
               history.push('/cart');
             }}
