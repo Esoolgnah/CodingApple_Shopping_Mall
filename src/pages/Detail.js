@@ -1,5 +1,5 @@
 import { Nav } from 'react-bootstrap';
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import '../styles/pages/Detail.scss';

@@ -2,7 +2,7 @@
 import '../styles/components/Cart/Cart.css';
 import notice from '../images/cartNotice.jpeg';
 /* import Library */
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { Table } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
@@ -11,6 +11,7 @@ function Cart(props) {
   let dispatch = useDispatch();
   let history = useHistory();
   let state = useSelector(state => state);
+
   let sum = 0;
 
   const orderTitleStyle = {
@@ -47,12 +48,14 @@ function Cart(props) {
           <Table responsive>
             <thead>
               <tr>
-                <th class='col-md-1'>{/*순번*/}</th>
-                <th class='col-md-2'>{/*상품이미지*/}</th>
+                <th class='col-md-1'>
+                  <input type='checkbox' />
+                </th>
+                <th class='col-md-1'>{/*상품이미지*/}</th>
                 <th class='col-md-2'>상품명</th>
                 <th class='col-md-2'>가격</th>
-                <th class='col-md-2'>수량</th>
-                <th class='col-md-2'>변경</th>
+                <th class='col-md-1'>수량</th>
+                <th class='col-md-1'>변경</th>
                 <th class='col-md-1'>{/*삭제버튼*/}</th>
               </tr>
             </thead>
@@ -61,8 +64,7 @@ function Cart(props) {
                 return (
                   <tr key={i}>
                     <td>
-                      <p className=' '></p>
-                      {i + 1}
+                      <input type='checkbox' />
                     </td>
                     <td>
                       <img
