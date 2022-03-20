@@ -1,5 +1,7 @@
-td {
-  vertical-align: middle;
+#orderWrapper {
+  min-height: 200px;
+  /* border: 1px solid red; */
+  margin-top: 100px;
 }
 
 #noticeWrapper {
@@ -9,6 +11,10 @@ td {
   width: 100%;
   height: 276px;
   justify-content: center;
+}
+
+.itemImg:hover {
+  cursor: pointer;
 }
 
 .noticeImg {

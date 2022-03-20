@@ -3,7 +3,7 @@ import React, { useEffect, useState, useContext } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import '../styles/pages/Detail.scss';
-import { connect } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { CSSTransition } from 'react-transition-group';
 
 let 박스 = styled.div`
@@ -16,6 +16,8 @@ let 제목 = styled.h4`
 
 function Detail(props) {
   let history = useHistory();
+  let dispatch = useDispatch();
+
   let { id } = useParams();
   let 찾은상품 = props.shoes.find(function (상품) {
     return 상품.id == id;
@@ -71,7 +73,7 @@ function Detail(props) {
           <button
             className='btn btn-primary'
             onClick={() => {
-              props.dispatch({
+              dispatch({
                 type: '항목추가',
                 데이터: {
                   id: 찾은상품.id,
@@ -142,11 +144,12 @@ function TabContent(props) {
   else if (props.누른탭 === 2) return <div>2번째 내용</div>;
 }
 
-function state를props화(state) {
-  return {
-    state: state.reducer,
-    alert열렸니: state.reducer2,
-  };
-}
+// function state를props화(state) {
+//   return {
+//     state: state.reducer,
+//     alert열렸니: state.reducer2,
+//   };
+// }
 
-export default connect(state를props화)(Detail);
+// export default connect(state를props화)(Detail);
+export default Detail;

@@ -2,14 +2,23 @@
 import '../styles/components/Cart/Cart.css';
 import notice from '../images/cartNotice.jpeg';
 /* import Library */
-import React, { useEffect, memo } from 'react';
+import React from 'react';
+import { useHistory } from 'react-router-dom';
 import { Table } from 'react-bootstrap';
-import { connect, useDispatch, useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 function Cart(props) {
   let dispatch = useDispatch();
+  let history = useHistory();
   let state = useSelector(state => state);
-  let style = { color: 'black' };
+
+  const h3Style = {
+    textAlign: 'left',
+    fontWeight: 'bold',
+    top: '50px',
+    paddingLeft: '10px',
+    borderBottom: '2.5px solid black',
+  };
 
   const increaseData = a => {
     dispatch({ type: '수량증가', 데이터: a.id });
@@ -21,73 +30,90 @@ function Cart(props) {
     dispatch({ type: '상품삭제', 데이터: a.id });
   };
 
+  const goDetailPage = id => {
+    history.push('/detail/' + id);
+  };
+
   return (
-    <div>
+    <>
       {state.reducer.length > 0 ? (
-        <Table responsive>
-          <thead>
-            <tr style={style}>
-              <th class='col-md-2'>#</th>
-              <th class='col-md-2'>{/*상품이미지*/}</th>
-              <th class='col-md-2'>상품명</th>
-              <th class='col-md-2'>가격</th>
-              <th class='col-md-1'>수량</th>
-              <th class='col-md-1'>변경</th>
-              <th class='col-md-2'>{/*삭제버튼*/}</th>
-            </tr>
-          </thead>
-          <tbody>
-            {state.reducer.map((a, i) => {
-              return (
-                <tr key={i}>
-                  <td>
-                    <p className=' '></p>
-                    {a.id}
-                  </td>
-                  <td>
-                    <img src={a.image} width='150px' />
-                  </td>
-                  <td>{a.name}</td>
-                  <td>{a.price}원</td>
-                  <td>{a.quan}</td>
-                  <td>
-                    <button
-                      className='btn btn-default'
-                      onClick={() => {
-                        increaseData(a);
-                      }}
-                    >
-                      +
-                    </button>
-                    &nbsp;
-                    <button
-                      className='btn btn-default'
-                      onClick={() => {
-                        decreaseData(a);
-                      }}
-                    >
-                      -
-                    </button>
-                  </td>
-                  <td>
-                    <button
-                      className='btn btn-default'
-                      style={{
-                        fontWeight: 'bold',
-                        cursor: 'pointer',
-                      }}
-                      onClick={() => {
-                        deleteData(a);
-                      }}
-                    >
-                      x
-                    </button>
-                  </td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </Table>
+        <div id='container'>
+          <Table responsive>
+            <thead>
+              <tr>
+                <th class='col-md-1'>{/*순번*/}</th>
+                <th class='col-md-2'>{/*상품이미지*/}</th>
+                <th class='col-md-2'>상품명</th>
+                <th class='col-md-2'>가격</th>
+                <th class='col-md-2'>수량</th>
+                <th class='col-md-2'>변경</th>
+                <th class='col-md-1'>{/*삭제버튼*/}</th>
+              </tr>
+            </thead>
+            <tbody>
+              {state.reducer.map((a, i) => {
+                return (
+                  <tr key={i}>
+                    <td>
+                      <p className=' '></p>
+                      {i + 1}
+                    </td>
+                    <td>
+                      <img
+                        className='itemImg'
+                        onClick={() => {
+                          goDetailPage(a.id);
+                        }}
+                        src={a.image}
+                        width='150px'
+                      />
+                    </td>
+                    <td>{a.name}</td>
+                    <td>{a.price}원</td>
+                    <td>{a.quan}</td>
+                    <td>
+                      <button
+                        className='btn btn-default'
+                        onClick={() => {
+                          increaseData(a);
+                        }}
+                      >
+                        +
+                      </button>
+                      &nbsp;
+                      <button
+                        className='btn btn-default'
+                        onClick={() => {
+                          decreaseData(a);
+                        }}
+                      >
+                        -
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        className='btn btn-default'
+                        style={{
+                          fontWeight: 'bold',
+                          cursor: 'pointer',
+                        }}
+                        onClick={() => {
+                          deleteData(a);
+                        }}
+                      >
+                        x
+                      </button>
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </Table>
+          <div id='orderWrapper'>
+            <h3 style={h3Style}>주문합계</h3>
+            <Table responsive></Table>
+          </div>
+        </div>
       ) : (
         <div id='noticeWrapper'>
           <img className='noticeImg' src={notice} />
@@ -106,7 +132,7 @@ function Cart(props) {
           </button>
         </div>
       ) : null}
-    </div>
+    </>
   );
 }
 
