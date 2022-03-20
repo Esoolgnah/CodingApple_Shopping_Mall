@@ -51,11 +51,9 @@ function Detail(props) {
         <제목 className='red'>Detail</제목>
       </박스>
 
-      {alert && (
-        <div className='my-alert'>
-          <p>재고가 얼마 남지 않았습니다.</p>
-        </div>
-      )}
+      <div className={alert ? 'my-alert' : 'my-alert-hide'}>
+        <p>재고가 얼마 남지 않았습니다.</p>
+      </div>
 
       <div className='row'>
         <div className='col-md-6'>
@@ -82,6 +80,7 @@ function Detail(props) {
                   image: `https://codingapple1.github.io/shop/shoes${
                     찾은상품.id + 1
                   }.jpg`,
+                  price: 찾은상품.price,
                 },
               });
               history.push('/cart');
@@ -102,23 +101,25 @@ function Detail(props) {
             <Nav.Item>
               <Nav.Link
                 eventKey='link-0'
+                style={{ color: 'black' }}
                 onClick={() => {
                   스위치변경(false);
                   누른탭변경(0);
                 }}
               >
-                Active
+                0
               </Nav.Link>
             </Nav.Item>
             <Nav.Item>
               <Nav.Link
                 eventKey='link-1'
+                style={{ color: 'black' }}
                 onClick={() => {
                   스위치변경(false);
                   누른탭변경(1);
                 }}
               >
-                Option 2
+                1
               </Nav.Link>
             </Nav.Item>
           </Nav>

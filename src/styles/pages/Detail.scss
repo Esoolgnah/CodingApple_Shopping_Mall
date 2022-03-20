@@ -13,15 +13,21 @@ $메인칼라: black;
 }
 
 @mixin 함수() {
-  background: #ffe591;
+  background: black;
+  color: white;
   padding: 15px;
   border-radius: 5px;
-  max-width: 500px;
-  width: 100%;
+  width: 500px;
+  font-weight: bold;
   margin: auto;
 }
 .my-alert {
   @include 함수();
+  &-hide {
+    @extend .my-alert;
+    opacity: 0;
+    transition: all 500ms;
+  }
 }
 .my-alert p {
   margin-bottom: 0;

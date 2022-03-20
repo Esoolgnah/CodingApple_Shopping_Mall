@@ -27,12 +27,13 @@ function Cart(props) {
         <Table responsive>
           <thead>
             <tr style={style}>
-              <th class='col-md-1'>#</th>
+              <th class='col-md-2'>#</th>
               <th class='col-md-2'>{/*상품이미지*/}</th>
-              <th class='col-md-3'>상품명</th>
+              <th class='col-md-2'>상품명</th>
+              <th class='col-md-2'>가격</th>
               <th class='col-md-1'>수량</th>
               <th class='col-md-1'>변경</th>
-              <th class='col-md-1'>{/*삭제버튼*/}</th>
+              <th class='col-md-2'>{/*삭제버튼*/}</th>
             </tr>
           </thead>
           <tbody>
@@ -47,6 +48,7 @@ function Cart(props) {
                     <img src={a.image} width='150px' />
                   </td>
                   <td>{a.name}</td>
+                  <td>{a.price}원</td>
                   <td>{a.quan}</td>
                   <td>
                     <button
