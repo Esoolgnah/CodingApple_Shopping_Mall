@@ -4,6 +4,20 @@
   margin-top: 100px;
 }
 
+.orderTable {
+  position: relative;
+  max-width: 500px;
+  left: 50%;
+  padding: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  text-align: center;
+  background-color: #f3f3f3;
+  border-radius: 15px;
+
+  transform: translate(-50%, 0%);
+}
+
 #noticeWrapper {
   /* border: 1px solid red; */
   display: flex;

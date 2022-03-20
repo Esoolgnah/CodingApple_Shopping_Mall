@@ -34,5 +34,9 @@ col-md-6:hover {
 td {
   vertical-align: middle;
 }
+tr:hover {
+  opacity: 50%;
+  transition: all 0.3s;
+}
 
 /* bootStrap class*/

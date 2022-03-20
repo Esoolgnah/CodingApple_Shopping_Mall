@@ -11,13 +11,19 @@ function Cart(props) {
   let dispatch = useDispatch();
   let history = useHistory();
   let state = useSelector(state => state);
+  let sum = 0;
 
-  const h3Style = {
+  const orderTitleStyle = {
     textAlign: 'left',
     fontWeight: 'bold',
     top: '50px',
     paddingLeft: '10px',
     borderBottom: '2.5px solid black',
+  };
+
+  const orderBtnStyle = {
+    fontWeight: 'bold',
+    cursor: 'pointer',
   };
 
   const increaseData = a => {
@@ -93,10 +99,7 @@ function Cart(props) {
                     <td>
                       <button
                         className='btn btn-default'
-                        style={{
-                          fontWeight: 'bold',
-                          cursor: 'pointer',
-                        }}
+                        style={orderBtnStyle}
                         onClick={() => {
                           deleteData(a);
                         }}
@@ -110,8 +113,33 @@ function Cart(props) {
             </tbody>
           </Table>
           <div id='orderWrapper'>
-            <h3 style={h3Style}>주문합계</h3>
-            <Table responsive></Table>
+            <h1 style={orderTitleStyle}>주문합계</h1>
+            <div className='orderTable'>
+              {state.reducer.map((a, i) => {
+                sum += a.price * a.quan;
+                return (
+                  <ul>
+                    {`${i + 1}.
+                 ${a.price}원 x ${a.quan}개 = ${a.price * a.quan}원`}
+                    <p>{i !== state.reducer.length - 1 ? '+' : '='}</p>
+                    <h3>
+                      {i !== state.reducer.length - 1 ? null : `${sum}원`}
+                    </h3>
+                  </ul>
+                );
+              })}
+              <button
+                className='btn-primary'
+                style={{
+                  width: '200px',
+                  height: '50px',
+                  fontSize: '20px',
+                  fontWeight: 'bold',
+                }}
+              >
+                주문하기
+              </button>
+            </div>
           </div>
         </div>
       ) : (
