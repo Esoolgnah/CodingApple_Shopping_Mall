@@ -15,7 +15,9 @@ function Cart(props) {
   let state = useSelector(state => state);
 
   let sum = 0;
-
+  for (let i = 0; i < state.reducer.length; i++) {
+    sum += state.reducer[i].price * state.reducer[i].quan;
+  }
   const orderTitleStyle = {
     textAlign: 'left',
     fontWeight: 'bold',
@@ -135,39 +137,23 @@ function Cart(props) {
           <div id='orderWrapper'>
             <h1 style={orderTitleStyle}>주문합계</h1>
             <div className='orderTable'>
-              {state.reducer.map((a, i) => {
+              {/* {state.reducer.map((a, i) => {
                 sum += a.price * a.quan;
-                return (
-                  <ul>
-                    <div className='priceWrapper'>
-                      <h3>
-                        {i !== state.reducer.length - 1
-                          ? null
-                          : `결제예정금액 `}
-                      </h3>
-                      <h3>
-                        {i !== state.reducer.length - 1 ? null : ` ${sum}원`}
-                      </h3>
-                    </div>
-                    <div className='priceWrapper'>
-                      <p>
-                        {i !== state.reducer.length - 1
-                          ? null
-                          : `상품금액 합계 `}
-                      </p>
-                      <p>
-                        {i !== state.reducer.length - 1 ? null : ` ${sum}원`}
-                      </p>
-                    </div>
-                    <div className='priceWrapper'>
-                      <p>
-                        {i !== state.reducer.length - 1 ? null : `배송비 합계 `}
-                      </p>
-                      <p>{i !== state.reducer.length - 1 ? null : ` + 0원`}</p>
-                    </div>
-                  </ul>
-                );
-              })}
+                return <></>;
+              })} */}
+              <div className='priceWrapper'>
+                <h3>결제예정금액</h3>
+                <h3>{`${sum}원`}</h3>
+              </div>
+              <div className='priceWrapper'>
+                <p>상품금액 합계</p>
+                <p>{` ${sum}원`}</p>
+              </div>
+              <div className='priceWrapper'>
+                <p>배송비 합계</p>
+                <p> + 0원</p>
+              </div>
+
               <button className='btn-primary opacity' style={orderBtnStyle}>
                 {`총 ${sum}원 주문하기`}
               </button>
