@@ -7,8 +7,25 @@ import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { createStore, combineReducers } from 'redux';
 
-let alert초기값 = true;
+let checkBox초기값 = [];
+function reducer3(state = checkBox초기값, 액션) {
+  if (액션.type === 'check추가') {
+    let copy = [...state];
+    copy.push(액션.데이터);
+    return copy;
+  } else if (액션.type === 'check해제') {
+    let found = state.findIndex(a => {
+      return a.id === 액션.데이터;
+    });
+    let copy = [...state];
+    copy.splice(found, 1);
+    return copy;
+  } else {
+    return state;
+  }
+}
 
+let alert초기값 = true;
 function reducer2(state = alert초기값, 액션) {
   if (액션.type === 'alert닫기') {
     state = false;
@@ -17,6 +34,7 @@ function reducer2(state = alert초기값, 액션) {
     return state;
   }
 }
+
 let 초기값 = [];
 function reducer(state = 초기값, 액션) {
   if (액션.type === '항목추가') {
@@ -57,7 +75,7 @@ function reducer(state = 초기값, 액션) {
     return state;
   }
 }
-let store = createStore(combineReducers({ reducer, reducer2 }));
+let store = createStore(combineReducers({ reducer, reducer2, reducer3 }));
 
 ReactDOM.render(
   <React.StrictMode>

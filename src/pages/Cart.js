@@ -6,6 +6,8 @@ import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { Table } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
+/* import Component */
+import CheckBox from '../components/Cart/CheckBox.js';
 
 function Cart(props) {
   let dispatch = useDispatch();
@@ -22,9 +24,17 @@ function Cart(props) {
     borderBottom: '2.5px solid black',
   };
 
-  const orderBtnStyle = {
+  const amountBtnStyle = {
     fontWeight: 'bold',
     cursor: 'pointer',
+    marginBottom: '3px',
+  };
+
+  const orderBtnStyle = {
+    width: '200px',
+    height: '50px',
+    fontSize: '20px',
+    fontWeight: 'bold',
   };
 
   const increaseData = a => {
@@ -55,7 +65,7 @@ function Cart(props) {
                 <th class='col-md-2'>상품명</th>
                 <th class='col-md-2'>가격</th>
                 <th class='col-md-1'>수량</th>
-                <th class='col-md-1'>변경</th>
+                <th class='col-md-1'>배송비</th>
                 <th class='col-md-1'>{/*삭제버튼*/}</th>
               </tr>
             </thead>
@@ -64,11 +74,16 @@ function Cart(props) {
                 return (
                   <tr key={i}>
                     <td>
-                      <input type='checkbox' />
+                      <CheckBox
+                        index={i}
+                        id={a.id}
+                        price={a.price}
+                        quan={a.quan}
+                      />
                     </td>
                     <td>
                       <img
-                        className='itemImg'
+                        className='itemImg opacity'
                         onClick={() => {
                           goDetailPage(a.id);
                         }}
@@ -78,19 +93,21 @@ function Cart(props) {
                     </td>
                     <td>{a.name}</td>
                     <td>{a.price}원</td>
-                    <td>{a.quan}</td>
                     <td>
+                      {' '}
                       <button
                         className='btn btn-default'
+                        style={amountBtnStyle}
                         onClick={() => {
                           increaseData(a);
                         }}
                       >
                         +
                       </button>
-                      &nbsp;
+                      {a.quan}
                       <button
                         className='btn btn-default'
+                        style={amountBtnStyle}
                         onClick={() => {
                           decreaseData(a);
                         }}
@@ -98,10 +115,11 @@ function Cart(props) {
                         -
                       </button>
                     </td>
+                    <td>무료</td>
                     <td>
                       <button
                         className='btn btn-default'
-                        style={orderBtnStyle}
+                        style={amountBtnStyle}
                         onClick={() => {
                           deleteData(a);
                         }}
@@ -125,20 +143,17 @@ function Cart(props) {
                  ${a.price}원 x ${a.quan}개 = ${a.price * a.quan}원`}
                     <p>{i !== state.reducer.length - 1 ? '+' : '='}</p>
                     <h3>
-                      {i !== state.reducer.length - 1 ? null : `${sum}원`}
+                      {i !== state.reducer.length - 1
+                        ? null
+                        : `${sum}원 + 배송비 무료`}
+                    </h3>
+                    <h3>
+                      {i !== state.reducer.length - 1 ? null : `= 총 ${sum}원`}
                     </h3>
                   </ul>
                 );
               })}
-              <button
-                className='btn-primary'
-                style={{
-                  width: '200px',
-                  height: '50px',
-                  fontSize: '20px',
-                  fontWeight: 'bold',
-                }}
-              >
+              <button className='btn-primary opacity' style={orderBtnStyle}>
                 주문하기
               </button>
             </div>
@@ -166,12 +181,4 @@ function Cart(props) {
   );
 }
 
-// function state를props화(state) {
-//   return {
-//     state: state.reducer,
-//     alert열렸니: state.reducer2,
-//   };
-// }
-
-// export default connect(state를props화)(Cart);
 export default Cart;

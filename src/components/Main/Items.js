@@ -36,7 +36,7 @@ function Items(props) {
       </div>
 
       {!더보기 && (
-        <button className='btn btn-primary' onClick={getDataAndHide}>
+        <button className='btn btn-primary opacity' onClick={getDataAndHide}>
           More
         </button>
       )}

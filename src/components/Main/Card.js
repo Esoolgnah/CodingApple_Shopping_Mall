@@ -11,7 +11,7 @@ function Card(props) {
 
   return (
     <div
-      className='col-lg-4 col-md-6'
+      className='col-lg-4 col-md-6 opacity'
       key={props.id}
       style={{ cursor: 'pointer' }}
       onClick={() => {

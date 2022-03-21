@@ -71,7 +71,7 @@ function Detail(props) {
           <p>{찾은상품.content}</p>
           <p>{찾은상품.price}원</p>
           <button
-            className='btn btn-primary'
+            className='btn btn-primary opacity'
             onClick={() => {
               dispatch({
                 type: '항목추가',
@@ -92,7 +92,7 @@ function Detail(props) {
           </button>
           &nbsp;
           <button
-            className='btn btn-primary'
+            className='btn btn-primary opacity'
             onClick={() => {
               history.push('/');
             }}
