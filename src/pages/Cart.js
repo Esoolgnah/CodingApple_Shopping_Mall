@@ -31,7 +31,7 @@ function Cart(props) {
   };
 
   const orderBtnStyle = {
-    width: '200px',
+    width: '100%',
     height: '50px',
     fontSize: '20px',
     fontWeight: 'bold',
@@ -139,22 +139,37 @@ function Cart(props) {
                 sum += a.price * a.quan;
                 return (
                   <ul>
-                    {`${i + 1}.
-                 ${a.price}원 x ${a.quan}개 = ${a.price * a.quan}원`}
-                    <p>{i !== state.reducer.length - 1 ? '+' : '='}</p>
-                    <h3>
-                      {i !== state.reducer.length - 1
-                        ? null
-                        : `${sum}원 + 배송비 무료`}
-                    </h3>
-                    <h3>
-                      {i !== state.reducer.length - 1 ? null : `= 총 ${sum}원`}
-                    </h3>
+                    <div className='priceWrapper'>
+                      <h3>
+                        {i !== state.reducer.length - 1
+                          ? null
+                          : `결제예정금액 `}
+                      </h3>
+                      <h3>
+                        {i !== state.reducer.length - 1 ? null : ` ${sum}원`}
+                      </h3>
+                    </div>
+                    <div className='priceWrapper'>
+                      <p>
+                        {i !== state.reducer.length - 1
+                          ? null
+                          : `상품금액 합계 `}
+                      </p>
+                      <p>
+                        {i !== state.reducer.length - 1 ? null : ` ${sum}원`}
+                      </p>
+                    </div>
+                    <div className='priceWrapper'>
+                      <p>
+                        {i !== state.reducer.length - 1 ? null : `배송비 합계 `}
+                      </p>
+                      <p>{i !== state.reducer.length - 1 ? null : ` + 0원`}</p>
+                    </div>
                   </ul>
                 );
               })}
               <button className='btn-primary opacity' style={orderBtnStyle}>
-                주문하기
+                {`총 ${sum}원 주문하기`}
               </button>
             </div>
           </div>

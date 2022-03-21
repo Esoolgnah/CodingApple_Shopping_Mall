@@ -5,7 +5,10 @@
 }
 
 .orderTable {
+  /* display: flex; */
   position: relative;
+  /* justify-content: center;
+  flex-wrap: wrap; */
   max-width: 500px;
   left: 50%;
   padding: 15px;
@@ -14,6 +17,11 @@
   text-align: center;
   background-color: #f3f3f3;
   transform: translate(-50%, 0%);
+}
+
+.priceWrapper {
+  display: flex;
+  justify-content: space-between;
 }
 
 #noticeWrapper {
