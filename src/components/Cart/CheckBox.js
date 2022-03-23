@@ -1,6 +1,5 @@
 /* import Library */
 import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 
 function CheckBox(props) {
   const [bChecked, setBChecked] = useState(true);
@@ -25,12 +24,10 @@ function CheckBox(props) {
       let copy = new Set([...props.checkList]);
       copy.add(props.id);
       props.setCheckList(copy);
-      console.log(props.checkList);
     } else {
       let copy = new Set([...props.checkList]);
       copy.delete(props.id);
       props.setCheckList(copy);
-      console.log(props.checkList);
     }
   }, [bChecked]);
 

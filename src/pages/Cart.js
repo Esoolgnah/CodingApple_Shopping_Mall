@@ -18,14 +18,20 @@ function Cart(props) {
   let checkedId = new Set();
 
   for (let i = 0; i < state.reducer.length; i++) {
-    sum += state.reducer[i].price * state.reducer[i].quan;
     checkedId.add(state.reducer[i].id);
   }
+
   /* checkList 상태 */
   const [allBChecked, setAllBChecked] = useState(true);
   const [allChecked, setAllChecked] = useState(true);
   const [checkList, setCheckList] = useState(checkedId);
   const [checkClicked, setCheckClicked] = useState(false);
+
+  for (let j = 0; j < state.reducer.length; j++) {
+    if (checkList.has(state.reducer[j].id) == true) {
+      sum += state.reducer[j].price * state.reducer[j].quan;
+    }
+  }
 
   const orderTitleStyle = {
     textAlign: 'left',
@@ -70,6 +76,7 @@ function Cart(props) {
 
   useEffect(() => {
     setCheckClicked(false);
+
     if (state.reducer.length === checkList.size) {
       setAllChecked(true);
       setAllBChecked(true);
