@@ -15,9 +15,18 @@ function Cart(props) {
   let state = useSelector(state => state);
 
   let sum = 0;
+  let checkedId = new Set();
+
   for (let i = 0; i < state.reducer.length; i++) {
     sum += state.reducer[i].price * state.reducer[i].quan;
+    checkedId.add(state.reducer[i].id);
   }
+  /* checkList 상태 */
+  const [allBChecked, setAllBChecked] = useState(true);
+  const [allChecked, setAllChecked] = useState(true);
+  const [checkList, setCheckList] = useState(checkedId);
+  const [checkClicked, setCheckClicked] = useState(false);
+
   const orderTitleStyle = {
     textAlign: 'left',
     fontWeight: 'bold',
@@ -38,6 +47,37 @@ function Cart(props) {
     fontSize: '20px',
     fontWeight: 'bold',
   };
+
+  const changeAllChecked = () => {
+    setAllBChecked(!allBChecked);
+    setCheckClicked(true);
+  };
+
+  useEffect(() => {
+    if (allBChecked === true) {
+      for (let i = 0; i < state.reducer.length; i++) {
+        checkedId.add(state.reducer[i].id);
+      }
+      setCheckList(checkedId);
+    } else {
+      if (checkClicked === true) {
+        let copy = new Set();
+        setCheckList(copy);
+        setCheckClicked(false);
+      }
+    }
+  }, [allBChecked]);
+
+  useEffect(() => {
+    setCheckClicked(false);
+    if (state.reducer.length === checkList.size) {
+      setAllChecked(true);
+      setAllBChecked(true);
+    } else {
+      setAllChecked(false);
+      setAllBChecked(false);
+    }
+  }, [checkList]);
 
   const increaseData = a => {
     dispatch({ type: '수량증가', 데이터: a.id });
@@ -61,7 +101,11 @@ function Cart(props) {
             <thead>
               <tr>
                 <th class='col-md-1'>
-                  <input type='checkbox' />
+                  <input
+                    type='checkbox'
+                    checked={allChecked}
+                    onChange={changeAllChecked}
+                  />
                 </th>
                 <th class='col-md-1'>{/*상품이미지*/}</th>
                 <th class='col-md-2'>상품명</th>
@@ -81,6 +125,8 @@ function Cart(props) {
                         id={a.id}
                         price={a.price}
                         quan={a.quan}
+                        checkList={checkList}
+                        setCheckList={setCheckList}
                       />
                     </td>
                     <td>
@@ -137,10 +183,6 @@ function Cart(props) {
           <div id='orderWrapper'>
             <h1 style={orderTitleStyle}>주문합계</h1>
             <div className='orderTable'>
-              {/* {state.reducer.map((a, i) => {
-                sum += a.price * a.quan;
-                return <></>;
-              })} */}
               <div className='priceWrapper'>
                 <h3>결제예정금액</h3>
                 <h3>{`${sum}원`}</h3>

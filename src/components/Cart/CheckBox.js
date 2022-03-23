@@ -3,32 +3,36 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 function CheckBox(props) {
-  let state = useSelector(state => state);
-  let dispatch = useDispatch();
-  const [checked, setChecked] = useState(false);
-  const [realCheck, setRealCheck] = useState(false);
+  const [bChecked, setBChecked] = useState(true);
+  const [checked, setChecked] = useState(true);
 
   const changeChecked = () => {
-    setChecked(!checked);
+    setBChecked(!bChecked);
   };
 
   useEffect(() => {
-    if (checked === true) {
-      dispatch({
-        type: 'check추가',
-        데이터: props.id,
-      });
-      console.log(state.reducer3);
-      console.log(state.reducer3);
-    } else if (checked === false) {
-      dispatch({
-        type: 'check해제',
-        데이터: props.id,
-      });
-      console.log(state.reducer3);
-      console.log(state.reducer3);
+    if (props.checkList.has(props.id) === true) {
+      setChecked(true);
+      setBChecked(true);
+    } else {
+      setChecked(false);
+      setBChecked(false);
     }
-  }, [checked]);
+  }, [props.checkList]);
+
+  useEffect(() => {
+    if (bChecked === true) {
+      let copy = new Set([...props.checkList]);
+      copy.add(props.id);
+      props.setCheckList(copy);
+      console.log(props.checkList);
+    } else {
+      let copy = new Set([...props.checkList]);
+      copy.delete(props.id);
+      props.setCheckList(copy);
+      console.log(props.checkList);
+    }
+  }, [bChecked]);
 
   return <input type='checkbox' checked={checked} onChange={changeChecked} />;
 }
