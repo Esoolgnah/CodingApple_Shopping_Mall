@@ -35,17 +35,17 @@ function Detail(props) {
     };
   }, []);
 
-  useEffect(() => {
-    let arr = localStorage.getItem('watched');
-    if (arr === null) arr = [];
-    else arr = JSON.parse(arr);
+  // useEffect(() => {
+  //   let arr = localStorage.getItem('watched');
+  //   if (arr === null) arr = [];
+  //   else arr = JSON.parse(arr);
 
-    arr.push(id);
-    arr = new Set(arr);
-    arr = [...arr];
+  //   arr.push(id);
+  //   arr = new Set(arr);
+  //   arr = [...arr];
 
-    localStorage.setItem('watched', JSON.stringify(arr));
-  }, []);
+  //   localStorage.setItem('watched', JSON.stringify(arr));
+  // }, []);
 
   return (
     <div className='container'>
@@ -144,12 +144,4 @@ function TabContent(props) {
   else if (props.누른탭 === 2) return <div>2번째 내용</div>;
 }
 
-// function state를props화(state) {
-//   return {
-//     state: state.reducer,
-//     alert열렸니: state.reducer2,
-//   };
-// }
-
-// export default connect(state를props화)(Detail);
 export default Detail;
