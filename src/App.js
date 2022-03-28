@@ -29,7 +29,7 @@ function App() {
         <Route path='/detail/:id'>
           <Suspense fallback={<div>로딩중</div>}>
             {/* 상세 페이지 */}
-            <Detail shoes={shoes} />
+            <Detail shoes={shoes} shoes변경={shoes변경} />
           </Suspense>
         </Route>
       </Switch>

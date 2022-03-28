@@ -1,3 +1,5 @@
+/* import Library */
+import axios from 'axios';
 import { Nav } from 'react-bootstrap';
 import React, { useEffect, useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
@@ -5,6 +7,8 @@ import styled from 'styled-components';
 import '../styles/pages/Detail.scss';
 import { useDispatch } from 'react-redux';
 import { CSSTransition } from 'react-transition-group';
+
+let recents = [];
 
 let 박스 = styled.div`
   padding: 20px;
@@ -25,6 +29,33 @@ function Detail(props) {
   const [alert, alert변경] = useState(true);
   let [누른탭, 누른탭변경] = useState(0);
   let [스위치, 스위치변경] = useState(false);
+  let [recent, setRecent] = useState([]);
+  const getData = el => {
+    axios
+      .get('https://codingapple1.github.io/shop/data2.json')
+      .then(result => {
+        if (result.data) props.shoes변경([...props.shoes, ...result.data]);
+      })
+      .catch(() => {
+        console.log('실패');
+      });
+
+    let arr = localStorage.getItem('watched');
+    if (arr === null) arr = [];
+    else arr = JSON.parse(arr);
+    let idx = arr.indexOf(el);
+    if (idx > -1) {
+      arr.splice(idx, 1);
+      arr.unshift(el);
+    } else {
+      arr.unshift(el);
+    }
+    if (arr.length > 3) {
+      arr = [arr[0], arr[1], arr[2]];
+    }
+    recents = arr;
+    localStorage.setItem('watched', JSON.stringify(arr));
+  };
 
   useEffect(() => {
     let 타이머 = setTimeout(() => {
@@ -35,20 +66,57 @@ function Detail(props) {
     };
   }, []);
 
-  // useEffect(() => {
-  //   let arr = localStorage.getItem('watched');
-  //   if (arr === null) arr = [];
-  //   else arr = JSON.parse(arr);
+  useEffect(() => {
+    // localStorage.clear();
+    let arr = localStorage.getItem('watched');
+    if (arr === null) arr = [];
+    else arr = JSON.parse(arr);
+    let idx = arr.indexOf(id);
+    if (idx > -1) {
+      arr.splice(idx, 1);
+      arr.unshift(id);
+    } else {
+      arr.unshift(id);
+    }
+    if (arr.length > 3) {
+      arr = [arr[0], arr[1], arr[2]];
+    }
+    recents = arr;
+    localStorage.setItem('watched', JSON.stringify(arr));
+  }, []);
 
-  //   arr.push(id);
-  //   arr = new Set(arr);
-  //   arr = [...arr];
+  const goDetailPage = el => {
+    getData(el);
+    setTimeout(() => {
+      history.push('/detail/' + el);
+    }, 100);
+  };
 
-  //   localStorage.setItem('watched', JSON.stringify(arr));
-  // }, []);
+  useEffect(() => {
+    setRecent(recents);
+  }, [recents]);
 
   return (
     <div className='container'>
+      <div id='recentBox'>
+        <p className='title'>최근 본 상품</p>
+        {recent.map((el, i) => {
+          return (
+            <div className='imgWrapper' key={el}>
+              <img
+                className='img'
+                src={`https://codingapple1.github.io/shop/shoes${
+                  Number(el) + 1
+                }.jpg`}
+                onClick={() => {
+                  goDetailPage(el);
+                }}
+              ></img>
+            </div>
+          );
+        })}
+      </div>
+
       <박스>
         <제목 className='red'>Detail</제목>
       </박스>
