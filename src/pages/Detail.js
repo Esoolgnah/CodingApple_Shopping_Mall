@@ -30,16 +30,18 @@ function Detail(props) {
   let [누른탭, 누른탭변경] = useState(0);
   let [스위치, 스위치변경] = useState(false);
   let [recent, setRecent] = useState([]);
-  const getData = el => {
-    axios
-      .get('https://codingapple1.github.io/shop/data2.json')
-      .then(result => {
-        if (result.data) props.shoes변경([...props.shoes, ...result.data]);
-      })
-      .catch(() => {
-        console.log('실패');
-      });
 
+  const getData = el => {
+    if (props.shoes.length < 4) {
+      axios
+        .get('https://codingapple1.github.io/shop/data2.json')
+        .then(result => {
+          if (result.data) props.shoes변경([...props.shoes, ...result.data]);
+        })
+        .catch(() => {
+          console.log('실패');
+        });
+    }
     let arr = localStorage.getItem('watched');
     if (arr === null) arr = [];
     else arr = JSON.parse(arr);
@@ -55,6 +57,14 @@ function Detail(props) {
     }
     recents = arr;
     localStorage.setItem('watched', JSON.stringify(arr));
+
+    alert변경(true);
+    let 타이머 = setTimeout(() => {
+      alert변경(false);
+    }, 2000);
+    return () => {
+      clearTimeout(타이머);
+    };
   };
 
   useEffect(() => {
@@ -99,7 +109,7 @@ function Detail(props) {
   return (
     <div className='container'>
       <div id='recentBox'>
-        <p className='title'>최근 본 상품</p>
+        <p className='title'>Recently Viewed</p>
         {recent.map((el, i) => {
           return (
             <div className='imgWrapper' key={el}>

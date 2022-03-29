@@ -8,8 +8,9 @@ function Items(props) {
   let [더보기, 더보기변경] = useState(false);
 
   useEffect(() => {
-    props.shoes변경([props.shoes[0], props.shoes[1], props.shoes[2]]);
-  }, []);
+    if (props.shoes.length > 3) 더보기변경(true);
+    else 더보기변경(false);
+  }, [props.shoes]);
 
   const getData = () => {
     axios

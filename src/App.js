@@ -16,7 +16,7 @@ function App() {
   return (
     <div className='App'>
       {/* 네비게이션 바 */}
-      <NavigationBar />
+      <NavigationBar shoes={shoes} shoes변경={shoes변경} />
       <Switch>
         <Route exact path='/'>
           {/* 메인페이지 */}

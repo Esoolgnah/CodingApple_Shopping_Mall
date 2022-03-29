@@ -13,11 +13,11 @@ $메인칼라: black;
 }
 
 @mixin 함수() {
-  background: black;
-  color: white;
+  background: #f3f3f3;
+  color: #303030;
   padding: 15px;
   border-radius: 5px;
-  width: 450px;
+  width: 100%;
   font-weight: bold;
   margin: auto;
 }
@@ -44,6 +44,7 @@ $메인칼라: black;
   overflow-x: 5px;
   transform: translate(-50%, 0%);
 }
+
 .title {
   font-weight: bold;
   width: 100%;

@@ -1,45 +1,80 @@
 .Jumbotron {
   position: relative;
   display: flex;
-  width: 100%;
-  height: 400px;
 }
 .JumbotronBackground {
   display: flex;
   justify-content: center;
-  background-image: url('../../../images/배경0.jpg');
-  background-size: cover;
-  width: 100%;
-  height: 100%;
 }
+
+@media (min-width: 1200px) {
+  .Jumbotron {
+    width: 100%;
+    height: 490px;
+  }
+  .JumbotronBackground {
+    background-image: url('../../../images/배경0.jpg');
+    background-size: 2000px 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 100%;
+    height: 490px;
+  }
+}
+@media (max-width: 1199px) {
+  .Jumbotron {
+    width: 100%;
+    height: 450px;
+  }
+  .JumbotronBackground {
+    background-image: url('../../../images/배경0.jpg');
+    background-size: 1700px 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 100%;
+    height: 450px;
+  }
+}
+@media (max-width: 767px) {
+  .Jumbotron {
+    width: 100%;
+    height: 550px;
+  }
+  .JumbotronBackground {
+    background-image: url('../../../images/배경모바일0.jpg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 100%;
+    height: 550px;
+  }
+}
+
 .JumbotronHello {
-  position: absolute;
-  font-size: 72px;
-  text-shadow: 0px 0px 10px;
-  top: 20%;
-  left: 50%;
-  transform: translate(-50%, 0%);
-  color: white;
-}
-.JumbotronWelcome {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, 0%);
+  transform: translate(-50%, -50%);
+  color: white;
+  font-weight: bolder;
+}
+.JumbotronWelcome {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
   color: white;
   font-size: 20px;
-  text-shadow: 0px 0px 10px;
 }
-.JumbotronButton {
-  position: absolute;
-  width: 130px;
-  height: 50px;
 
-  border-radius: 35px;
-  background: #282828;
-  top: 70%;
-  left: 50%;
-  transform: translate(-50%, 0%);
-  color: white;
-  background-color: rgb(100, 100, 100);
+.title-enter {
+  opacity: 0.1;
+  transform: translate(-55%, -50%);
+}
+
+.title-enter-active {
+  opacity: 1;
+  transform: translate(-50%, -50%);
+  transition: all 800ms;
 }
