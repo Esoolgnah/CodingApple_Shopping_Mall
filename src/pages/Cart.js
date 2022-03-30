@@ -2,6 +2,7 @@
 import '../styles/components/Cart/Cart.css';
 import notice from '../images/cartNotice.jpeg';
 /* import Library */
+import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { Table } from 'react-bootstrap';
@@ -97,7 +98,20 @@ function Cart(props) {
   };
 
   const goDetailPage = id => {
-    history.push('/detail/' + id);
+    if (props.shoes.length < 4) {
+      axios
+        .get('https://codingapple1.github.io/shop/data2.json')
+        .then(result => {
+          if (result.data) props.shoes변경([...props.shoes, ...result.data]);
+        })
+        .catch(() => {
+          console.log('실패');
+        });
+    }
+
+    setTimeout(() => {
+      history.push('/detail/' + id);
+    }, 300);
   };
 
   return (

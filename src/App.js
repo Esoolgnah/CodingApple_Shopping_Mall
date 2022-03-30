@@ -24,7 +24,7 @@ function App() {
         </Route>
         <Route path='/cart'>
           {/* 장바구니 페이지 */}
-          <Cart />
+          <Cart shoes={shoes} shoes변경={shoes변경} />
         </Route>
         <Route path='/detail/:id'>
           <Suspense fallback={<div>로딩중</div>}>

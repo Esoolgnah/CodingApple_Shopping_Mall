@@ -31,7 +31,7 @@ function Detail(props) {
   let [스위치, 스위치변경] = useState(false);
   let [recent, setRecent] = useState([]);
 
-  const getData = el => {
+  const getDataAndSetting = el => {
     if (props.shoes.length < 4) {
       axios
         .get('https://codingapple1.github.io/shop/data2.json')
@@ -42,6 +42,7 @@ function Detail(props) {
           console.log('실패');
         });
     }
+
     let arr = localStorage.getItem('watched');
     if (arr === null) arr = [];
     else arr = JSON.parse(arr);
@@ -96,10 +97,10 @@ function Detail(props) {
   }, []);
 
   const goDetailPage = el => {
-    getData(el);
+    getDataAndSetting(el);
     setTimeout(() => {
       history.push('/detail/' + el);
-    }, 100);
+    }, 300);
   };
 
   useEffect(() => {
