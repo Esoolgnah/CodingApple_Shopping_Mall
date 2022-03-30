@@ -17,7 +17,9 @@ function NavigationBar(props) {
     <>
       <Navbar bg='light' expand='lg'>
         <Container>
-          <Navbar.Brand onClick={goHome}>ShoeShop</Navbar.Brand>
+          <Navbar.Brand onClick={goHome}>
+            <div className='opacity'>ShoeShop</div>
+          </Navbar.Brand>
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav'>
             <Nav className='me-auto'>

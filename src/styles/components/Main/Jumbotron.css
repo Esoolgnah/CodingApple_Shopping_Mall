@@ -3,6 +3,7 @@
   display: flex;
 }
 .JumbotronBackground {
+  background-color: rgb(247, 248, 249);
   display: flex;
   justify-content: center;
 }
@@ -14,7 +15,7 @@
   }
   .JumbotronBackground {
     background-image: url('../../../images/배경0.jpg');
-    background-size: 2000px 100%;
+    background-size: 2100px 100%;
     background-repeat: no-repeat;
     background-position: center center;
     width: 100%;
@@ -42,7 +43,7 @@
   }
   .JumbotronBackground {
     background-image: url('../../../images/배경모바일0.jpg');
-    background-size: 100% 100%;
+    background-size: 450px 100%;
     background-repeat: no-repeat;
     background-position: center center;
     width: 100%;

@@ -9,7 +9,6 @@ import { useDispatch } from 'react-redux';
 import { CSSTransition } from 'react-transition-group';
 
 let recents = [];
-
 let 박스 = styled.div`
   padding: 20px;
 `;
@@ -113,7 +112,7 @@ function Detail(props) {
         <p className='title'>Recently Viewed</p>
         {recent.map((el, i) => {
           return (
-            <div className='imgWrapper' key={el}>
+            <div className='imgWrapper opacity' key={el}>
               <img
                 className='img'
                 src={`https://codingapple1.github.io/shop/shoes${

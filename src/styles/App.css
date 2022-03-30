@@ -52,11 +52,13 @@ td {
 } */
 
 .opacity:hover {
+  cursor: pointer;
   opacity: 0.7;
   transition: opacity 0.3s;
   filter: alpha(opacity=50); /* For IE8 and earlier */
 }
 .opacity {
+  cursor: pointer;
   opacity: 1;
   filter: alpha(opacity=100); /* For IE8 and earlier */
 }
