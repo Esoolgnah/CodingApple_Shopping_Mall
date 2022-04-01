@@ -79,14 +79,6 @@ function Detail(props) {
     }
     recents = arr;
     localStorage.setItem('watched', JSON.stringify(arr));
-
-    alert변경(true);
-    let 타이머 = setTimeout(() => {
-      alert변경(false);
-    }, 2000);
-    return () => {
-      clearTimeout(타이머);
-    };
   };
 
   useEffect(() => {
@@ -121,6 +113,13 @@ function Detail(props) {
     getDataAndSetting(el);
     setTimeout(() => {
       history.push('/detail/' + el);
+      alert변경(true);
+      let 타이머 = setTimeout(() => {
+        alert변경(false);
+      }, 2000);
+      return () => {
+        clearTimeout(타이머);
+      };
     }, 1000);
   };
 
