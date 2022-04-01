@@ -111,7 +111,7 @@ function Cart(props) {
 
     setTimeout(() => {
       history.push('/detail/' + id);
-    }, 300);
+    }, 1000);
   };
 
   return (

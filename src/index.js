@@ -7,6 +7,19 @@ import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { createStore, combineReducers } from 'redux';
 
+let goCartModalState = false;
+function goCartModalReducer(state = goCartModalState, action) {
+  if (action.type === 'goCartModalOn') {
+    let curState = true;
+    return curState;
+  } else if (action.type === 'goCartModalOff') {
+    let curState = false;
+    return curState;
+  } else {
+    return state;
+  }
+}
+
 let checkBox초기값 = [];
 function reducer3(state = checkBox초기값, 액션) {
   if (액션.type === 'check추가') {
@@ -75,7 +88,9 @@ function reducer(state = 초기값, 액션) {
     return state;
   }
 }
-let store = createStore(combineReducers({ reducer, reducer2, reducer3 }));
+let store = createStore(
+  combineReducers({ reducer, reducer2, reducer3, goCartModalReducer }),
+);
 
 ReactDOM.render(
   <React.StrictMode>

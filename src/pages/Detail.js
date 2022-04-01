@@ -1,10 +1,11 @@
+/* import CSS */
+import '../styles/pages/Detail.scss';
 /* import Library */
 import axios from 'axios';
 import { Nav } from 'react-bootstrap';
 import React, { useEffect, useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import styled from 'styled-components';
-import '../styles/pages/Detail.scss';
 import { useDispatch } from 'react-redux';
 import { CSSTransition } from 'react-transition-group';
 
@@ -29,6 +30,27 @@ function Detail(props) {
   let [누른탭, 누른탭변경] = useState(0);
   let [스위치, 스위치변경] = useState(false);
   let [recent, setRecent] = useState([]);
+
+  const addItemAndGoCart = () => {
+    // 장바구니 항목 추가
+    dispatch({
+      type: '항목추가',
+      데이터: {
+        id: 찾은상품.id,
+        name: 찾은상품.title,
+        quan: 1,
+        image: `https://codingapple1.github.io/shop/shoes${
+          찾은상품.id + 1
+        }.jpg`,
+        price: 찾은상품.price,
+      },
+    });
+
+    // 장바구니 이동 여부 모달 On
+    dispatch({
+      type: 'goCartModalOn',
+    });
+  };
 
   const getDataAndSetting = el => {
     if (props.shoes.length < 4) {
@@ -99,7 +121,7 @@ function Detail(props) {
     getDataAndSetting(el);
     setTimeout(() => {
       history.push('/detail/' + el);
-    }, 300);
+    }, 1000);
   };
 
   useEffect(() => {
@@ -151,19 +173,7 @@ function Detail(props) {
           <button
             className='btn btn-primary opacity'
             onClick={() => {
-              dispatch({
-                type: '항목추가',
-                데이터: {
-                  id: 찾은상품.id,
-                  name: 찾은상품.title,
-                  quan: 1,
-                  image: `https://codingapple1.github.io/shop/shoes${
-                    찾은상품.id + 1
-                  }.jpg`,
-                  price: 찾은상품.price,
-                },
-              });
-              history.push('/cart');
+              addItemAndGoCart();
             }}
           >
             장바구니에 담기

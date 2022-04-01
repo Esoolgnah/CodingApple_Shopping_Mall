@@ -1,0 +1,71 @@
+#modalContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.bg {
+  z-index: 3;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: black;
+  opacity: 0.3;
+}
+
+.goCartModal {
+  z-index: 5;
+  position: fixed;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 450px;
+  height: 250px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border-radius: 10px;
+}
+
+.goCartModalTitle {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 50%;
+  top: 15%;
+  white-space: pre-wrap;
+  font-size: 18px;
+}
+
+.goCartModalBtnWrapper {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  height: 30%;
+  bottom: 5%;
+}
+
+.goCartModalBtn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40%;
+  height: 50%;
+
+  background-color: black;
+  border: none;
+  border-radius: 5px;
+  color: white;
+}
