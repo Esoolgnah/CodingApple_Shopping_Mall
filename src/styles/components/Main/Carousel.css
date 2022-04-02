@@ -1,4 +1,4 @@
-.Jumbotron {
+/* .Jumbotron {
   position: relative;
   display: flex;
 }
@@ -14,7 +14,7 @@
     height: 490px;
   }
   .JumbotronBackground {
-    background-image: url('../../../images/배경0.jpg');
+    background-image: url('../../../images/slide1.png');
     background-size: 2100px 100%;
     background-repeat: no-repeat;
     background-position: center center;
@@ -28,7 +28,7 @@
     height: 450px;
   }
   .JumbotronBackground {
-    background-image: url('../../../images/배경0.jpg');
+    background-image: url('../../../images/slide1.png');
     background-size: 1700px 100%;
     background-repeat: no-repeat;
     background-position: center center;
@@ -42,7 +42,7 @@
     height: 550px;
   }
   .JumbotronBackground {
-    background-image: url('../../../images/배경모바일0.jpg');
+    background-image: url('../../../images/slide_Mobile1.png');
     background-size: 450px 100%;
     background-repeat: no-repeat;
     background-position: center center;
@@ -78,4 +78,4 @@
   opacity: 1;
   transform: translate(-50%, -50%);
   transition: all 800ms;
-}
+} */
