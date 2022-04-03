@@ -14,16 +14,21 @@ import pcImg5 from '../../images/slide5.png';
 import mobileImg5 from '../../images/slide_Mobile5.png';
 
 /* import Library */
-import React, { Component, useRef, useEffect, useState } from 'react';
-import { CSSTransition } from 'react-transition-group';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import Slider from 'react-slick';
 
 const StyledSlider = styled(Slider)`
   .slick-list {
+    @media only screen and (max-width: 767px) {
+      height: 550px;
+    }
+    @media only screen and (min-width: 768px) {
+      height: 450px;
+    }
     width: 100%;
-    height: 450px;
   }
+
   .slick-slide div {
     width: 100%;
     height: 450px;
@@ -91,32 +96,32 @@ const StyledSlider = styled(Slider)`
 `;
 
 const SlideImg = styled.img`
+  @media only screen and (max-width: 767px) {
+    height: 550px;
+  }
+  @media only screen and (min-width: 768px) {
+    height: 450px;
+  }
   width: 100%;
-  height: 450px;
   object-fit: cover;
+  object-position: center;
 `;
 const SlideTextWrapper = styled.div`
   width: 100%;
   height: 100%;
   transform: translate(0%, -100%);
 `;
-const SlideTitle = styled.h1`
-  padding: 0px;
-  width: 100%;
-  text-align: left;
-  color: white;
-  transform: translate(13%, 200px);
-`;
-const SlideText = styled.p`
-  padding: 0px;
-  width: 100%;
-  text-align: left;
-  color: white;
-  transform: translate(13%, 210px);
-`;
 
 const pcImgs = [pcImg1, pcImg2, pcImg3, pcImg4, pcImg5];
 const mobileImgs = [mobileImg1, mobileImg2, mobileImg3, mobileImg4, mobileImg5];
+let curImgs = [];
+if (matchMedia('screen and (min-width: 768px)').matches) {
+  // 768px 이상에서 사용할 JavaScript
+  curImgs = [...pcImgs];
+} else {
+  // 768px 미만에서 사용할 JavaScript
+  curImgs = [...mobileImgs];
+}
 
 const items = [
   {
@@ -128,8 +133,8 @@ const items = [
   },
   {
     id: 2,
-    head: ' ',
-    main: ' ',
+    head: '~70% Off 로퍼, 슬립온',
+    main: '가벼워지는 옷차림, 가격도 가볍게',
     pcImg: '../../images/slide2.png',
     mobileImg: '../../images/slide_Mobile2.png',
   },
@@ -201,6 +206,12 @@ function PrevArrow(props) {
 }
 
 export default function Carousel() {
+  const [slideTitleAnimation, setSlideTitleAnimation] = useState(false);
+  const [width, setWidth] = useState(0);
+
+  const resizeWindow = () => {
+    setWidth(window.innerWidth);
+  };
   const settings = {
     dots: true,
     arrows: true,
@@ -214,18 +225,53 @@ export default function Carousel() {
     centerPadding: '0px',
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
+    afterChange: () => {
+      setSlideTitleAnimation(false);
+    },
+    beforeChange: () => {
+      setSlideTitleAnimation(true);
+    },
   };
+
+  useEffect(() => {
+    window.addEventListener('resize', resizeWindow);
+    return () => {
+      window.removeEventListener('resize', resizeWindow);
+    };
+  });
+  useEffect(() => {
+    if (matchMedia('screen and (min-width: 768px)').matches) {
+      // 768px 이상에서 사용할 JavaScript
+      console.log('desktop');
+      curImgs = [...pcImgs];
+    } else {
+      // 768px 미만에서 사용할 JavaScript
+      console.log('mobile');
+      curImgs = [...mobileImgs];
+    }
+  }, [width]);
+
   return (
     <StyledSlider {...settings}>
       {items.map((item, idx) => {
         return (
           <div key={item.id}>
-            <SlideImg src={pcImgs[idx]} />
+            <SlideImg src={curImgs[idx]} />
             <SlideTextWrapper>
-              {/* <CSSTransition in={true} classNames='title' timeout={800}> */}
-              <SlideTitle>{item.head}</SlideTitle>
-              <SlideText>{item.main}</SlideText>
-              {/* </CSSTransition> */}
+              <h1
+                className={
+                  slideTitleAnimation ? 'slideTitleTransition' : 'slideTitle'
+                }
+              >
+                {item.head}
+              </h1>
+              <p
+                className={
+                  slideTitleAnimation ? 'slideTextTransition' : 'slideText'
+                }
+              >
+                {item.main}
+              </p>
             </SlideTextWrapper>
           </div>
         );
