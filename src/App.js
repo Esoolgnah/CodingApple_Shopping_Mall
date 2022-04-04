@@ -1,5 +1,6 @@
 /* import CSS */
 import '../src/styles/App.css';
+import loadingImg from '../src/images/spinner.gif';
 /* import Library */
 import React, { useState, lazy, Suspense } from 'react';
 import { Route, Switch } from 'react-router-dom';
@@ -33,7 +34,13 @@ function App() {
           <Cart shoes={shoes} shoes변경={shoes변경} />
         </Route>
         <Route path='/detail/:id'>
-          <Suspense fallback={<div>로딩중</div>}>
+          <Suspense
+            fallback={
+              <div id='loadingContainer'>
+                <img src={loadingImg} />
+              </div>
+            }
+          >
             {/* 상세 페이지 */}
             <Detail shoes={shoes} shoes변경={shoes변경} />
           </Suspense>

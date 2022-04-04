@@ -242,11 +242,9 @@ export default function Carousel() {
   useEffect(() => {
     if (matchMedia('screen and (min-width: 768px)').matches) {
       // 768px 이상에서 사용할 JavaScript
-      console.log('desktop');
       curImgs = [...pcImgs];
     } else {
       // 768px 미만에서 사용할 JavaScript
-      console.log('mobile');
       curImgs = [...mobileImgs];
     }
   }, [width]);
