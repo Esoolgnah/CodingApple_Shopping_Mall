@@ -5,8 +5,14 @@ import { useHistory } from 'react-router-dom';
 function Card(props) {
   let history = useHistory();
 
-  const goDetailPage = id => {
+  const goDetailPage = (id) => {
     history.push('/detail/' + id);
+  };
+
+  /* 숫자에 콤마(,)추가하여 표시 */
+  const addComma = (num) => {
+    var regexp = /\B(?=(\d{3})+(?!\d))/g;
+    return num.toString().replace(regexp, ',');
   };
 
   return (
@@ -26,7 +32,7 @@ function Card(props) {
       />
       <h4>{props.shoes.title}</h4>
       <p>
-        {props.shoes.content} & {props.shoes.price}
+        {props.shoes.content} & {addComma(props.shoes.price)}
       </p>
     </div>
   );

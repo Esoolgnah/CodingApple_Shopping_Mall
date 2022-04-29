@@ -13,7 +13,7 @@ import CheckBox from '../components/Cart/CheckBox.js';
 function Cart(props) {
   let dispatch = useDispatch();
   let history = useHistory();
-  let state = useSelector(state => state);
+  let state = useSelector((state) => state);
 
   let sum = 0;
   let checkedId = new Set();
@@ -60,6 +60,12 @@ function Cart(props) {
     setCheckClicked(true);
   };
 
+  /* 숫자에 콤마(,)추가하여 표시 */
+  const addComma = (num) => {
+    var regexp = /\B(?=(\d{3})+(?!\d))/g;
+    return num.toString().replace(regexp, ',');
+  };
+
   useEffect(() => {
     if (allBChecked === true) {
       for (let i = 0; i < state.reducer.length; i++) {
@@ -87,21 +93,21 @@ function Cart(props) {
     }
   }, [checkList]);
 
-  const increaseData = a => {
+  const increaseData = (a) => {
     dispatch({ type: '수량증가', 데이터: a.id });
   };
-  const decreaseData = a => {
+  const decreaseData = (a) => {
     dispatch({ type: '수량감소', 데이터: a.id });
   };
-  const deleteData = a => {
+  const deleteData = (a) => {
     dispatch({ type: '상품삭제', 데이터: a.id });
   };
 
-  const goDetailPage = id => {
+  const goDetailPage = (id) => {
     if (props.shoes.length < 4) {
       axios
         .get('https://codingapple1.github.io/shop/data2.json')
-        .then(result => {
+        .then((result) => {
           if (result.data) props.shoes변경([...props.shoes, ...result.data]);
         })
         .catch(() => {
@@ -161,7 +167,7 @@ function Cart(props) {
                       />
                     </td>
                     <td>{a.name}</td>
-                    <td>{a.price}원</td>
+                    <td>{addComma(a.price)}원</td>
                     <td>
                       {' '}
                       <button
@@ -206,11 +212,11 @@ function Cart(props) {
             <div className='orderTable'>
               <div className='priceWrapper'>
                 <h3>결제예정금액</h3>
-                <h3>{`${sum}원`}</h3>
+                <h3>{`${addComma(sum)}원`}</h3>
               </div>
               <div className='priceWrapper'>
                 <p>상품금액 합계</p>
-                <p>{` ${sum}원`}</p>
+                <p>{` ${addComma(sum)}원`}</p>
               </div>
               <div className='priceWrapper'>
                 <p>배송비 합계</p>
@@ -218,7 +224,7 @@ function Cart(props) {
               </div>
 
               <button className='btn-primary opacity' style={orderBtnStyle}>
-                {`총 ${sum}원 주문하기`}
+                {`총 ${addComma(sum)}원 주문하기`}
               </button>
             </div>
           </div>

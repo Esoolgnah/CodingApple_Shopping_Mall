@@ -15,7 +15,7 @@ let 박스 = styled.div`
 `;
 let 제목 = styled.h4`
   font-size: 25px;
-  color: ${props => props.색상};
+  color: ${(props) => props.색상};
 `;
 
 function Detail(props) {
@@ -30,6 +30,12 @@ function Detail(props) {
   let [누른탭, 누른탭변경] = useState(0);
   let [스위치, 스위치변경] = useState(false);
   let [recent, setRecent] = useState([]);
+
+  /* 숫자에 콤마(,)추가하여 표시 */
+  const addComma = (num) => {
+    var regexp = /\B(?=(\d{3})+(?!\d))/g;
+    return num.toString().replace(regexp, ',');
+  };
 
   const addItemAndGoCart = () => {
     // 장바구니 항목 추가
@@ -52,11 +58,11 @@ function Detail(props) {
     });
   };
 
-  const getDataAndSetting = el => {
+  const getDataAndSetting = (el) => {
     if (props.shoes.length < 4) {
       axios
         .get('https://codingapple1.github.io/shop/data2.json')
-        .then(result => {
+        .then((result) => {
           if (result.data) props.shoes변경([...props.shoes, ...result.data]);
         })
         .catch(() => {
@@ -109,7 +115,7 @@ function Detail(props) {
     localStorage.setItem('watched', JSON.stringify(arr));
   }, []);
 
-  const goDetailPage = el => {
+  const goDetailPage = (el) => {
     getDataAndSetting(el);
     setTimeout(() => {
       history.push('/detail/' + el);
@@ -168,7 +174,7 @@ function Detail(props) {
         <div className='col-md-6 mt-4'>
           <h4 className='pt-5'>{찾은상품.title}</h4>
           <p>{찾은상품.content}</p>
-          <p>{찾은상품.price}원</p>
+          <p>{addComma(찾은상품.price)}원</p>
           <button
             className='btn btn-primary opacity'
             onClick={() => {
