@@ -1,0 +1,153 @@
+#detailpage_viewport {
+  z-index: 1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+
+  #detailpage_container {
+    z-index: 1;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    top: 78px;
+    @include mobile() {
+      width: 100%;
+      height: 100%;
+    }
+    @include tab() {
+      width: 100%;
+      height: 100%;
+    }
+    @include desktop() {
+      width: 1000px;
+      height: 100%;
+    }
+
+    #jumbotron {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: $jumbotron;
+      width: 100%;
+      height: 100%;
+      border: 1px solid yellow;
+      @include mobile() {
+        height: 540px;
+        flex-direction: column;
+      }
+      @include tab() {
+        height: 540px;
+        flex-direction: column;
+      }
+      @include desktop() {
+        height: 365px;
+        flex-direction: row;
+      }
+
+      .all_wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        // border: 5px solid gray;
+        @include mobile() {
+          flex-direction: column;
+          height: 480px;
+        }
+        @include tab() {
+          flex-direction: column;
+          height: 480px;
+        }
+        @include desktop() {
+          width: 700px;
+          height: 260px;
+          flex-direction: row;
+        }
+
+        .img_wrapper {
+          border-radius: 10px;
+
+          @include mobile() {
+            width: 300px;
+            height: 208px;
+          }
+          @include tab() {
+            width: 300px;
+            height: 208px;
+          }
+          @include desktop() {
+            width: 375px;
+            height: 260px;
+          }
+
+          > img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+          }
+        }
+      }
+      .contents_wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: space-between;
+        // border: 3px solid purple;
+        @include mobile() {
+          width: 300px;
+          height: 242px;
+        }
+        @include tab() {
+          width: 300px;
+          height: 242px;
+        }
+        @include desktop() {
+          width: 295px;
+          height: 260px;
+        }
+        .title {
+          width: 100%;
+          height: 92px;
+          color: $white;
+          @extend %detailTitleFont;
+          // border: 1px solid white;
+        }
+        .tutor {
+          @extend .title;
+          font-size: $detailTutorFont;
+          // border: 1px solid white;
+          height: 17px;
+        }
+        .price {
+          @extend .title;
+          @extend %detailTitleFont;
+          // border: 1px solid white;
+          height: 24px;
+        }
+
+        .button_wrapper {
+          position: relative;
+          display: flex;
+          justify-content: space-between;
+          height: 40px;
+          width: 100%;
+          // border: 1px solid yellow;
+
+          .goCartButton {
+            @extend %buttonSize;
+            @extend %buttonFont;
+            background-color: $gray;
+            color: $white;
+          }
+          .goBackButton {
+            @extend .goCartButton;
+            background-color: $signiture;
+          }
+        }
+      }
+    }
+  }
+}

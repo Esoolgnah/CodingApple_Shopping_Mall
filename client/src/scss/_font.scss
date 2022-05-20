@@ -1,0 +1,50 @@
+/* Font */
+// 사용예시 : @extend %articleTitleFont;
+// font-size: $titleFont;
+
+$font-main: 'Noto Sans KR', sans-serif;
+$semibold: 600;
+
+/*----- Search -----*/
+$searchDesktopFont: 15px;
+$searchTabFont: 20px;
+/*----- Search -----*/
+
+/*----- Title -----*/
+$titleFont: 24px;
+/*----- Title -----*/
+
+/*----- Article -----*/
+%articleTitleFont {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+$articleTutorFont: 14.4px;
+/*----- Article -----*/
+
+/*----- Modal -----*/
+%modalTitleFont {
+  font-size: 20px;
+  font-weight: $semibold;
+}
+
+%buttonFont {
+  font-size: 15px;
+  font-weight: $semibold;
+}
+/*----- Modal -----*/
+
+/*----- Detail -----*/
+%detailTitleFont {
+  font-size: 26px;
+  font-weight: bold;
+}
+
+%detailPriceFont {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+$detailTutorFont: 14px;
+/*----- Detail -----*/

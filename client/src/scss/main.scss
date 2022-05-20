@@ -1,0 +1,32 @@
+/*----- Import Standard -----*/
+@import './color.scss';
+@import './size.scss';
+@import './responsive.scss';
+@import './font.scss';
+/*----- Import Standard -----*/
+
+/*----- Import Page Style -----*/
+@import './pages/MainPage.scss';
+@import './pages/DetailPage.scss';
+/*----- Import Page Style -----*/
+
+/*----- Import Component Style -----*/
+@import './components/Header.scss';
+/*----- Import Component Style -----*/
+
+/*----- Global Style -----*/
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: $font-main;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+/*----- Global Style -----*/

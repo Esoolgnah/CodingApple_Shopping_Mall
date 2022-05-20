@@ -1,0 +1,521 @@
+/*----- Import Standard -----*/
+/* Color */
+/*----- Search -----*/
+/*----- Search -----*/
+/*----- Title -----*/
+/*----- Title -----*/
+/*----- Article -----*/
+/*----- Article -----*/
+/*----- Jumbotron -----*/
+/*----- Jumbotron -----*/
+/*----- Global -----*/
+/*----- Global -----*/
+/* Size */
+/*----- Article -----*/
+#mainpage_viewport #mainpage_container .posts_wrapper .card {
+  width: 250px;
+  height: 250px;
+}
+
+/*----- Article -----*/
+/*----- Modal -----*/
+/*----- Modal -----*/
+/*----- Jumbotron -----*/
+/*----- Jumbotron -----*/
+/*----- Global -----*/
+#detailpage_viewport #detailpage_container #jumbotron .contents_wrapper .button_wrapper .goCartButton, #detailpage_viewport #detailpage_container #jumbotron .contents_wrapper .button_wrapper .goBackButton {
+  width: 130px;
+  height: 40px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/*----- Global -----*/
+/* Responsive */
+/*----- Break Point -----*/
+/*----- Break Point -----*/
+/*----- Mixins -----*/
+/*----- Mixins -----*/
+/* Font */
+/*----- Search -----*/
+/*----- Search -----*/
+/*----- Title -----*/
+/*----- Title -----*/
+/*----- Article -----*/
+#mainpage_viewport #mainpage_container .posts_wrapper .card .contents_wrapper .title, #mainpage_viewport #mainpage_container .posts_wrapper .card #detailpage_viewport #detailpage_container #jumbotron .contents_wrapper .price, #detailpage_viewport #detailpage_container #jumbotron #mainpage_viewport #mainpage_container .posts_wrapper .card .contents_wrapper .price, #mainpage_viewport #mainpage_container .posts_wrapper .card #detailpage_viewport #detailpage_container #jumbotron .contents_wrapper .tutor, #detailpage_viewport #detailpage_container #jumbotron #mainpage_viewport #mainpage_container .posts_wrapper .card .contents_wrapper .tutor, #mainpage_viewport #mainpage_container .posts_wrapper .card .contents_wrapper .price {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/*----- Article -----*/
+/*----- Modal -----*/
+#detailpage_viewport #detailpage_container #jumbotron .contents_wrapper .button_wrapper .goCartButton, #detailpage_viewport #detailpage_container #jumbotron .contents_wrapper .button_wrapper .goBackButton {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/*----- Modal -----*/
+/*----- Detail -----*/
+#detailpage_viewport #detailpage_container #jumbotron .contents_wrapper .title, #detailpage_viewport #detailpage_container #jumbotron .contents_wrapper .price, #detailpage_viewport #detailpage_container #jumbotron .contents_wrapper .tutor {
+  font-size: 26px;
+  font-weight: bold;
+}
+
+/*----- Detail -----*/
+/*----- Import Standard -----*/
+/*----- Import Page Style -----*/
+#mainpage_viewport {
+  z-index: 1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+#mainpage_viewport #mainpage_container {
+  z-index: 1;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  top: 78px;
+}
+@media (max-width: 767px) {
+  #mainpage_viewport #mainpage_container {
+    width: 100%;
+  }
+}
+@media (min-width: 768px) {
+  #mainpage_viewport #mainpage_container {
+    width: 100%;
+  }
+}
+@media (min-width: 1200px) {
+  #mainpage_viewport #mainpage_container {
+    width: 1000px;
+  }
+}
+#mainpage_viewport #mainpage_container .title_wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 35px;
+  width: 100%;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+#mainpage_viewport #mainpage_container .title_wrapper > p {
+  color: #303030;
+  font-size: 24px;
+}
+#mainpage_viewport #mainpage_container .posts_wrapper {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+@media (max-width: 767px) {
+  #mainpage_viewport #mainpage_container .posts_wrapper {
+    width: 250px;
+  }
+}
+@media (min-width: 768px) {
+  #mainpage_viewport #mainpage_container .posts_wrapper {
+    width: 550px;
+  }
+}
+@media (min-width: 1200px) {
+  #mainpage_viewport #mainpage_container .posts_wrapper {
+    width: 850px;
+  }
+}
+#mainpage_viewport #mainpage_container .posts_wrapper .card {
+  margin-bottom: 100px;
+  cursor: pointer;
+}
+#mainpage_viewport #mainpage_container .posts_wrapper .card .img_wrapper {
+  width: 250px;
+  height: 173px;
+}
+#mainpage_viewport #mainpage_container .posts_wrapper .card .img_wrapper > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+#mainpage_viewport #mainpage_container .posts_wrapper .card .contents_wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: space-between;
+  width: 250px;
+  height: 77px;
+}
+#mainpage_viewport #mainpage_container .posts_wrapper .card .contents_wrapper .title, #mainpage_viewport #mainpage_container .posts_wrapper .card #detailpage_viewport #detailpage_container #jumbotron .contents_wrapper .price, #detailpage_viewport #detailpage_container #jumbotron #mainpage_viewport #mainpage_container .posts_wrapper .card .contents_wrapper .price, #mainpage_viewport #mainpage_container .posts_wrapper .card #detailpage_viewport #detailpage_container #jumbotron .contents_wrapper .tutor, #detailpage_viewport #detailpage_container #jumbotron #mainpage_viewport #mainpage_container .posts_wrapper .card .contents_wrapper .tutor, #mainpage_viewport #mainpage_container .posts_wrapper .card .contents_wrapper .price {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 19px;
+  margin-top: 5px;
+  color: #454545;
+}
+#mainpage_viewport #mainpage_container .posts_wrapper .card .contents_wrapper .tutor {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 17px;
+  font-size: 14.4px;
+  color: #818181;
+}
+#mainpage_viewport #mainpage_container .posts_wrapper .card .contents_wrapper .price {
+  margin-top: 0px;
+  margin-bottom: 5px;
+  color: #2d5bb8;
+}
+#mainpage_viewport #mainpage_container .add_button {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90px;
+  height: 90px;
+  border-radius: 100%;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+@media (max-width: 767px) {
+  #mainpage_viewport #mainpage_container .add_button {
+    bottom: 20px;
+    right: 20px;
+  }
+}
+@media (min-width: 768px) {
+  #mainpage_viewport #mainpage_container .add_button {
+    bottom: 40px;
+    right: 40px;
+  }
+}
+@media (min-width: 1200px) {
+  #mainpage_viewport #mainpage_container .add_button {
+    bottom: 40px;
+    right: 40px;
+  }
+}
+#mainpage_viewport #mainpage_container .add_button > img {
+  width: 100%;
+  border-radius: 100%;
+}
+
+#detailpage_viewport {
+  z-index: 1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+#detailpage_viewport #detailpage_container {
+  z-index: 1;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  top: 78px;
+}
+@media (max-width: 767px) {
+  #detailpage_viewport #detailpage_container {
+    width: 100%;
+    height: 100%;
+  }
+}
+@media (min-width: 768px) {
+  #detailpage_viewport #detailpage_container {
+    width: 100%;
+    height: 100%;
+  }
+}
+@media (min-width: 1200px) {
+  #detailpage_viewport #detailpage_container {
+    width: 1000px;
+    height: 100%;
+  }
+}
+#detailpage_viewport #detailpage_container #jumbotron {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #00202c;
+  width: 100%;
+  height: 100%;
+  border: 1px solid yellow;
+}
+@media (max-width: 767px) {
+  #detailpage_viewport #detailpage_container #jumbotron {
+    height: 540px;
+    flex-direction: column;
+  }
+}
+@media (min-width: 768px) {
+  #detailpage_viewport #detailpage_container #jumbotron {
+    height: 540px;
+    flex-direction: column;
+  }
+}
+@media (min-width: 1200px) {
+  #detailpage_viewport #detailpage_container #jumbotron {
+    height: 365px;
+    flex-direction: row;
+  }
+}
+#detailpage_viewport #detailpage_container #jumbotron .all_wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@media (max-width: 767px) {
+  #detailpage_viewport #detailpage_container #jumbotron .all_wrapper {
+    flex-direction: column;
+    height: 480px;
+  }
+}
+@media (min-width: 768px) {
+  #detailpage_viewport #detailpage_container #jumbotron .all_wrapper {
+    flex-direction: column;
+    height: 480px;
+  }
+}
+@media (min-width: 1200px) {
+  #detailpage_viewport #detailpage_container #jumbotron .all_wrapper {
+    width: 700px;
+    height: 260px;
+    flex-direction: row;
+  }
+}
+#detailpage_viewport #detailpage_container #jumbotron .all_wrapper .img_wrapper {
+  border-radius: 10px;
+}
+@media (max-width: 767px) {
+  #detailpage_viewport #detailpage_container #jumbotron .all_wrapper .img_wrapper {
+    width: 300px;
+    height: 208px;
+  }
+}
+@media (min-width: 768px) {
+  #detailpage_viewport #detailpage_container #jumbotron .all_wrapper .img_wrapper {
+    width: 300px;
+    height: 208px;
+  }
+}
+@media (min-width: 1200px) {
+  #detailpage_viewport #detailpage_container #jumbotron .all_wrapper .img_wrapper {
+    width: 375px;
+    height: 260px;
+  }
+}
+#detailpage_viewport #detailpage_container #jumbotron .all_wrapper .img_wrapper > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+#detailpage_viewport #detailpage_container #jumbotron .contents_wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: space-between;
+}
+@media (max-width: 767px) {
+  #detailpage_viewport #detailpage_container #jumbotron .contents_wrapper {
+    width: 300px;
+    height: 242px;
+  }
+}
+@media (min-width: 768px) {
+  #detailpage_viewport #detailpage_container #jumbotron .contents_wrapper {
+    width: 300px;
+    height: 242px;
+  }
+}
+@media (min-width: 1200px) {
+  #detailpage_viewport #detailpage_container #jumbotron .contents_wrapper {
+    width: 295px;
+    height: 260px;
+  }
+}
+#detailpage_viewport #detailpage_container #jumbotron .contents_wrapper .title, #detailpage_viewport #detailpage_container #jumbotron .contents_wrapper .price, #detailpage_viewport #detailpage_container #jumbotron .contents_wrapper .tutor {
+  width: 100%;
+  height: 92px;
+  color: #ffffff;
+}
+#detailpage_viewport #detailpage_container #jumbotron .contents_wrapper .tutor {
+  font-size: 14px;
+  height: 17px;
+}
+#detailpage_viewport #detailpage_container #jumbotron .contents_wrapper .price {
+  height: 24px;
+}
+#detailpage_viewport #detailpage_container #jumbotron .contents_wrapper .button_wrapper {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  height: 40px;
+  width: 100%;
+}
+#detailpage_viewport #detailpage_container #jumbotron .contents_wrapper .button_wrapper .goCartButton, #detailpage_viewport #detailpage_container #jumbotron .contents_wrapper .button_wrapper .goBackButton {
+  background-color: #c4c4c4;
+  color: #ffffff;
+}
+#detailpage_viewport #detailpage_container #jumbotron .contents_wrapper .button_wrapper .goBackButton {
+  background-color: #58c179;
+}
+
+/*----- Import Page Style -----*/
+/*----- Import Component Style -----*/
+#header_container {
+  z-index: 2;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 78px;
+  background-color: #ffffff;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
+}
+#header_container #desktop_wrapper {
+  position: relative;
+  align-items: center;
+  max-width: 1000px;
+  width: 100%;
+  height: 100%;
+}
+@media (max-width: 767px) {
+  #header_container #desktop_wrapper {
+    display: none;
+  }
+}
+@media (min-width: 768px) {
+  #header_container #desktop_wrapper {
+    display: none;
+  }
+}
+@media (min-width: 1200px) {
+  #header_container #desktop_wrapper {
+    display: flex;
+  }
+}
+#header_container #desktop_wrapper .logo_wrapper {
+  position: relative;
+  width: 120px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+#header_container #desktop_wrapper .logo_wrapper > img {
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+#header_container #desktop_wrapper .search_box {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  width: 550px;
+  height: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(29, 192, 120, 0.12);
+  border: 1px solid rgba(29, 192, 120, 0.24);
+  border-radius: 25px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.05);
+}
+#header_container #desktop_wrapper .search_box > input {
+  margin-left: 25px;
+  height: 100%;
+  width: 400px;
+  background-color: transparent;
+  border: none;
+  color: #99c9b8;
+  font-size: 15px;
+  outline: none;
+}
+#header_container #desktop_wrapper .search_box input::placeholder {
+  color: #99c9b8;
+  font-size: 15px;
+}
+#header_container #desktop_wrapper .search_box .icon_wrapper {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  right: 25px;
+  cursor: pointer;
+}
+#header_container #desktop_wrapper .search_box .icon_wrapper > img {
+  width: 100%;
+  opacity: 0.6;
+}
+#header_container #mobile_wrapper {
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+@media (max-width: 767px) {
+  #header_container #mobile_wrapper {
+    display: flex;
+  }
+}
+@media (min-width: 768px) {
+  #header_container #mobile_wrapper {
+    display: flex;
+  }
+}
+@media (min-width: 1200px) {
+  #header_container #mobile_wrapper {
+    display: none;
+  }
+}
+#header_container #mobile_wrapper .mobile_icon_wrapper {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  left: 10px;
+  cursor: pointer;
+}
+#header_container #mobile_wrapper .mobile_icon_wrapper > img {
+  width: 100%;
+  opacity: 0.6;
+}
+#header_container #mobile_wrapper .mobile_logo_wrapper {
+  position: relative;
+  width: 120px;
+  cursor: pointer;
+}
+#header_container #mobile_wrapper .mobile_logo_wrapper > img {
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/*----- Import Component Style -----*/
+/*----- Global Style -----*/
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*----- Global Style -----*/
+
+/*# sourceMappingURL=/main.1e43358e.css.map */

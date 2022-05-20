@@ -236,4 +236,3 @@ fail
 
 
 ## 구현 설명
-🚀[링크](https://www.notion.so/hangloose/74f0ed89390d4514bd3c4c9c1d3f7ced)

@@ -1,0 +1,47 @@
+/* Size */
+// 사용예시 : @extend %buttonSize
+
+/*----- Article -----*/
+%cardSize {
+  width: 250px;
+  height: 250px;
+}
+/*----- Article -----*/
+
+/*----- Modal -----*/
+%inputSize {
+  width: 310px;
+  height: 40px;
+}
+
+%inputModalSize {
+  width: 350px;
+  height: 300px;
+}
+
+%alertModalSize {
+  width: 350px;
+  height: 230px;
+}
+/*----- Modal -----*/
+
+/*----- Jumbotron -----*/
+%jumbotronDesktopSize {
+  width: 375px;
+}
+
+%jumbotronTabSize {
+  width: 300px;
+}
+/*----- Jumbotron -----*/
+
+/*----- Global -----*/
+%buttonSize {
+  width: 130px;
+  height: 40px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+/*----- Global -----*/
