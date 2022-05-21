@@ -213,8 +213,9 @@ var _addButton = _interopRequireDefault(require("../images/addButton.png"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+/*----- Import Images -----*/
 var MainPage = function MainPage() {
-  return "\n    <div id = 'mainpage_viewport'>\n      <div id = 'mainpage_container'>\n        <div class = 'title_wrapper'>\n          <p>\uC131\uC7A5 \uAE30\uD68C\uC758 \uD3C9\uB4F1\uC744 \uCD94\uAD6C\uD569\uB2C8\uB2E4.</p>\n        </div>\n        <div class = 'posts_wrapper'>\n\n          <div class = 'card'>\n            <div class = 'img_wrapper'>\n              <img src = ".concat(_defaultImg.default, " alt = 'defaultImg'/>\n            </div>\n            <div class = 'contents_wrapper'>\n              <p class = 'title'>Oracle SQL Database 11g PL</p>\n              <p class = 'tutor'>\uC9C0\uC2DD\uACF5\uC720\uC790400</p>\n              <p class = 'price'>\u20A9150,000</p>\n            </div>\n          </div>\n          <div class = 'card'>\n            <div class = 'img_wrapper'>\n              <img src = ").concat(_defaultImg.default, " alt = 'defaultImg'/>\n            </div>\n            <div class = 'contents_wrapper'>\n              <p class = 'title'>Oracle SQL Database 11g PL</p>\n              <p class = 'tutor'>\uC9C0\uC2DD\uACF5\uC720\uC790400</p>\n              <p class = 'price'>\u20A9150,000</p>\n            </div>\n          </div>\n          <div class = 'card'>\n            <div class = 'img_wrapper'>\n              <img src = ").concat(_defaultImg.default, " alt = 'defaultImg'/>\n            </div>\n            <div class = 'contents_wrapper'>\n              <p class = 'title'>Oracle SQL Database 11g PL</p>\n              <p class = 'tutor'>\uC9C0\uC2DD\uACF5\uC720\uC790400</p>\n              <p class = 'price'>\u20A9150,000</p>\n            </div>\n          </div>\n          <div class = 'card'>\n            <div class = 'img_wrapper'>\n              <img src = ").concat(_defaultImg.default, " alt = 'defaultImg'/>\n            </div>\n            <div class = 'contents_wrapper'>\n              <p class = 'title'>Oracle SQL Database 11g PL</p>\n              <p class = 'tutor'>\uC9C0\uC2DD\uACF5\uC720\uC790400</p>\n              <p class = 'price'>\u20A9150,000</p>\n            </div>\n            </div>\n            <div class = 'card'>\n              <div class = 'img_wrapper'>\n                <img src = ").concat(_defaultImg.default, " alt = 'defaultImg'/>\n              </div>\n              <div class = 'contents_wrapper'>\n                <p class = 'title'>Oracle SQL Database 11g PL</p>\n                <p class = 'tutor'>\uC9C0\uC2DD\uACF5\uC720\uC790400</p>\n                <p class = 'price'>\u20A9150,000</p>\n              </div>\n            </div>\n            <div class = 'card'>\n              <div class = 'img_wrapper'>\n                <img src = ").concat(_defaultImg.default, " alt = 'defaultImg'/>\n              </div>\n              <div class = 'contents_wrapper'>\n                <p class = 'title'>Oracle SQL Database 11g PL</p>\n                <p class = 'tutor'>\uC9C0\uC2DD\uACF5\uC720\uC790400</p>\n                <p class = 'price'>\u20A9150,000</p>\n              </div>\n            </div>\n            <div class = 'card'>\n            <div class = 'img_wrapper'>\n              <img src = ").concat(_defaultImg.default, " alt = 'defaultImg'/>\n            </div>\n            <div class = 'contents_wrapper'>\n              <p class = 'title'>Oracle SQL Database 11g PL</p>\n              <p class = 'tutor'>\uC9C0\uC2DD\uACF5\uC720\uC790400</p>\n              <p class = 'price'>\u20A9150,000</p>\n            </div>\n          </div>\n          <div class = 'card'>\n            <div class = 'img_wrapper'>\n              <img src = ").concat(_defaultImg.default, " alt = 'defaultImg'/>\n            </div>\n            <div class = 'contents_wrapper'>\n              <p class = 'title'>Oracle SQL Database 11g PL</p>\n              <p class = 'tutor'>\uC9C0\uC2DD\uACF5\uC720\uC790400</p>\n              <p class = 'price'>\u20A9150,000</p>\n            </div>\n          </div>\n          <div class = 'card'>\n            <div class = 'img_wrapper'>\n              <img src = ").concat(_defaultImg.default, " alt = 'defaultImg'/>\n            </div>\n            <div class = 'contents_wrapper'>\n              <p class = 'title'>Oracle SQL Database 11g PL</p>\n              <p class = 'tutor'>\uC9C0\uC2DD\uACF5\uC720\uC790400</p>\n              <p class = 'price'>\u20A9150,000</p>\n            </div>\n          </div>\n        \n        </div>\n\n        <div class = 'add_button'>\n          <img src = ").concat(_addButton.default, " alt='addButton'/>\n        </div>\n        \n      <div/>\n    </div>\n  ");
+  return "\n    <div id = 'mainpage_viewport'>\n      <div id = 'mainpage_container'>\n        <div class = 'title_wrapper'>\n          <p>\uC131\uC7A5 \uAE30\uD68C\uC758 \uD3C9\uB4F1\uC744 \uCD94\uAD6C\uD569\uB2C8\uB2E4.</p>\n        </div>\n        <div class = 'posts_wrapper'>\n\n          <div class = 'card'>\n            <div class = 'img_wrapper'>\n              <img src = ".concat(_defaultImg.default, " alt = 'defaultImg'/>\n            </div>\n            <div class = 'contents_wrapper'>\n              <p class = 'title'>Oracle SQL Database 11g PL</p>\n              <p class = 'tutor'>\uC9C0\uC2DD\uACF5\uC720\uC790400</p>\n              <p class = 'price'>\u20A9150,000</p>\n            </div>\n          </div>\n          <div class = 'card'>\n            <div class = 'img_wrapper'>\n              <img src = ").concat(_defaultImg.default, " alt = 'defaultImg'/>\n            </div>\n            <div class = 'contents_wrapper'>\n              <p class = 'title'>Oracle SQL Database 11g PL</p>\n              <p class = 'tutor'>\uC9C0\uC2DD\uACF5\uC720\uC790400</p>\n              <p class = 'price'>\u20A9150,000</p>\n            </div>\n          </div>\n          <div class = 'card'>\n            <div class = 'img_wrapper'>\n              <img src = ").concat(_defaultImg.default, " alt = 'defaultImg'/>\n            </div>\n            <div class = 'contents_wrapper'>\n              <p class = 'title'>Oracle SQL Database 11g PL</p>\n              <p class = 'tutor'>\uC9C0\uC2DD\uACF5\uC720\uC790400</p>\n              <p class = 'price'>\u20A9150,000</p>\n            </div>\n          </div>\n          <div class = 'card'>\n            <div class = 'img_wrapper'>\n              <img src = ").concat(_defaultImg.default, " alt = 'defaultImg'/>\n            </div>\n            <div class = 'contents_wrapper'>\n              <p class = 'title'>Oracle SQL Database 11g PL</p>\n              <p class = 'tutor'>\uC9C0\uC2DD\uACF5\uC720\uC790400</p>\n              <p class = 'price'>\u20A9150,000</p>\n            </div>\n          </div>\n          <div class = 'card'>\n            <div class = 'img_wrapper'>\n              <img src = ").concat(_defaultImg.default, " alt = 'defaultImg'/>\n            </div>\n            <div class = 'contents_wrapper'>\n              <p class = 'title'>Oracle SQL Database 11g PL</p>\n              <p class = 'tutor'>\uC9C0\uC2DD\uACF5\uC720\uC790400</p>\n              <p class = 'price'>\u20A9150,000</p>\n            </div>\n          </div>\n          <div class = 'card'>\n            <div class = 'img_wrapper'>\n              <img src = ").concat(_defaultImg.default, " alt = 'defaultImg'/>\n            </div>\n            <div class = 'contents_wrapper'>\n              <p class = 'title'>Oracle SQL Database 11g PL</p>\n              <p class = 'tutor'>\uC9C0\uC2DD\uACF5\uC720\uC790400</p>\n              <p class = 'price'>\u20A9150,000</p>\n            </div>\n          </div>\n          <div class = 'card'>\n            <div class = 'img_wrapper'>\n              <img src = ").concat(_defaultImg.default, " alt = 'defaultImg'/>\n            </div>\n            <div class = 'contents_wrapper'>\n              <p class = 'title'>Oracle SQL Database 11g PL</p>\n              <p class = 'tutor'>\uC9C0\uC2DD\uACF5\uC720\uC790400</p>\n              <p class = 'price'>\u20A9150,000</p>\n            </div>\n          </div>\n          <div class = 'card'>\n            <div class = 'img_wrapper'>\n              <img src = ").concat(_defaultImg.default, " alt = 'defaultImg'/>\n            </div>\n            <div class = 'contents_wrapper'>\n              <p class = 'title'>Oracle SQL Database 11g PL</p>\n              <p class = 'tutor'>\uC9C0\uC2DD\uACF5\uC720\uC790400</p>\n              <p class = 'price'>\u20A9150,000</p>\n            </div>\n          </div>\n          <div class = 'card'>\n            <div class = 'img_wrapper'>\n              <img src = ").concat(_defaultImg.default, " alt = 'defaultImg'/>\n            </div>\n            <div class = 'contents_wrapper'>\n              <p class = 'title'>Oracle SQL Database 11g PL</p>\n              <p class = 'tutor'>\uC9C0\uC2DD\uACF5\uC720\uC790400</p>\n              <p class = 'price'>\u20A9150,000</p>\n            </div>\n          </div>\n          <div class = 'card'>\n            <div class = 'img_wrapper'>\n              <img src = ").concat(_defaultImg.default, " alt = 'defaultImg'/>\n            </div>\n            <div class = 'contents_wrapper'>\n              <p class = 'title'>Oracle SQL Database 11g PL</p>\n              <p class = 'tutor'>\uC9C0\uC2DD\uACF5\uC720\uC790400</p>\n              <p class = 'price'>\u20A9150,000</p>\n            </div>\n          </div>\n          <div class = 'card'>\n            <div class = 'img_wrapper'>\n              <img src = ").concat(_defaultImg.default, " alt = 'defaultImg'/>\n            </div>\n            <div class = 'contents_wrapper'>\n              <p class = 'title'>Oracle SQL Database 11g PL</p>\n              <p class = 'tutor'>\uC9C0\uC2DD\uACF5\uC720\uC790400</p>\n              <p class = 'price'>\u20A9150,000</p>\n            </div>\n          </div>\n          <div class = 'card'>\n            <div class = 'img_wrapper'>\n              <img src = ").concat(_defaultImg.default, " alt = 'defaultImg'/>\n            </div>\n            <div class = 'contents_wrapper'>\n              <p class = 'title'>Oracle SQL Database 11g PL</p>\n              <p class = 'tutor'>\uC9C0\uC2DD\uACF5\uC720\uC790400</p>\n              <p class = 'price'>\u20A9150,000</p>\n            </div>\n          </div>\n\n\n        </div>\n\n        <div class = 'add_button'>\n          <img src = ").concat(_addButton.default, " alt='addButton'/>\n        </div>\n        \n      <div/>\n    </div>\n  ");
 };
 
 exports.MainPage = MainPage;
@@ -230,15 +231,51 @@ var _defaultImg = _interopRequireDefault(require("../images/defaultImg.png"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+/*----- Import Images -----*/
 var DetailPage = function DetailPage() {
-  return "\n    <div id = 'detailpage_viewport'>\n      <div id = 'detailpage_container'>\n        <div id = 'jumbotron'>\n          <div class = 'all_wrapper'>\n            <div class = 'img_wrapper'>\n              <img src = ".concat(_defaultImg.default, " alt = 'defaultImg'/>\n            </div>\n            <div class = 'contents_wrapper'>\n              <p class = 'title'>Oracle SQL Database 11g PL Oracle SQL Database 11g PL</p>\n              <p class = 'tutor'>\uC9C0\uC2DD\uACF5\uC720\uC790400</p>\n              <p class = 'price'>\u20A9150,000</p>\n              <div class = 'button_wrapper'>\n                <button class = 'goCartButton'>\uB2F4\uAE30</button>\n                <button class = 'goBackButton'>\uB3CC\uC544\uAC00\uAE30</button>\n              </div>\n            </div>\n          </div>\n        </div>\n      <div/>\n    </div>\n  ");
+  return "\n    <div id = 'detailpage_viewport'>\n      <div id = 'detailpage_container'>\n        <div id = 'jumbotron'>\n          <div class = 'all_wrapper'>\n            <div class = 'img_wrapper'>\n              <img src = ".concat(_defaultImg.default, " alt = 'defaultImg'/>\n            </div>\n            <div class = 'contents_wrapper'>\n              <p class = 'title'>Oracle SQL Database 11g PL Oracle SQL Database 11g PL</p>\n              <div class = 'mid_wrapper'>\n                <p class = 'tutor'>\uC9C0\uC2DD\uACF5\uC720\uC790400</p>\n                <p class = 'price'>\u20A9150,000</p>\n              </div>\n              <div class = 'button_wrapper'>\n                <button class = 'goCartButton'>\uBC14\uAD6C\uB2C8\uC5D0 \uB2F4\uAE30</button>\n                <button class = 'goBackButton'>\uB3CC\uC544\uAC00\uAE30</button>\n              </div>\n            </div>\n          </div>\n        </div>\n      <div/>\n    </div>\n  ");
 };
 
 exports.DetailPage = DetailPage;
-},{"../images/defaultImg.png":"src/images/defaultImg.png"}],"src/images/logoImg.png":[function(require,module,exports) {
+},{"../images/defaultImg.png":"src/images/defaultImg.png"}],"src/components/modals/AddModal.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.AddModal = void 0;
+
+var AddModal = function AddModal() {
+  return "\n    <div id = 'addmodal_viewport'>\n      <div id = 'addmodal_background'></div>\n      <div id = 'addmodal_container'>\n        <div class = 'contents_wrapper'>\n          <p>\uAC15\uC758 \uC81C\uBAA9\uC744 \uC785\uB825\uD574\uC8FC\uC138\uC694.</p>\n          <div class = 'title_input_wrapper'>\n            <input placeholder = '\uC81C\uBAA9\uC744 \uC785\uB825\uD574\uC8FC\uC138\uC694.'/>\n          </div>\n          <div class = 'price_input_wrapper'>\n            <input placeholder = '\uAC00\uACA9\uC744 \uC785\uB825\uD574\uC8FC\uC138\uC694.'/>\n          </div>\n          <div class = 'button_wrapper'>\n            <button class = 'write_button'>\uC791\uC131\uD558\uAE30</button>\n            <button class = 'cancel_button'>\uCDE8\uC18C\uD558\uAE30</button>\n          </div>\n        </div>\n        </div>\n      </div>\n    </div>\n  ";
+};
+
+exports.AddModal = AddModal;
+},{}],"src/images/errorImg.png":[function(require,module,exports) {
+module.exports = "/errorImg.867d9ccf.png";
+},{}],"src/components/modals/AlertModal.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.AlertModal = void 0;
+
+var _errorImg = _interopRequireDefault(require("../../images/errorImg.png"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/*----- Import Images -----*/
+var AlertModal = function AlertModal() {
+  return "\n    <div id = 'alertmodal_viewport'>\n      <div id = 'alertmodal_background'></div>\n      <div id = 'alertmodal_container'>\n        <div class = 'contents_wrapper'>\n          <div class = 'alert_img_wrapper'>\n            <img src = ".concat(_errorImg.default, " alt = 'errorImg'/>\n          </div>\n          <div class = 'alert_title_wrapper'>\uC81C\uBAA9\uACFC \uAC00\uACA9\uC744<br>\uC815\uD655\uD788 \uC785\uB825\uD574\uC8FC\uC138\uC694.</div>\n          <div class = 'button_wrapper'>\n            <button class = 'ok_button'>\uD655\uC778</button>\n          </div>\n        </div>\n        </div>\n      </div>\n    </div>\n  ");
+};
+
+exports.AlertModal = AlertModal;
+},{"../../images/errorImg.png":"src/images/errorImg.png"}],"src/images/logoImg.png":[function(require,module,exports) {
 module.exports = "/logoImg.45c48681.png";
 },{}],"src/images/searchIcon.png":[function(require,module,exports) {
 module.exports = "/searchIcon.d69ccd09.png";
+},{}],"src/images/closeButton.png":[function(require,module,exports) {
+module.exports = "/closeButton.8fe2197f.png";
 },{}],"src/components/Header.js":[function(require,module,exports) {
 "use strict";
 
@@ -251,14 +288,32 @@ var _logoImg = _interopRequireDefault(require("../images/logoImg.png"));
 
 var _searchIcon = _interopRequireDefault(require("../images/searchIcon.png"));
 
+var _closeButton = _interopRequireDefault(require("../images/closeButton.png"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+/*----- Import Images -----*/
+
+/*----- 클래스명 변경 관리 Desktop -----*/
+// desktop_search_box: 검색창 인풋 박스
+// &_active: 활성화 상태
+// &_typed: 검색어 입력시
+// desktop_search_result: 검색결과창
+// &_active: 활성화 상태
+
+/*----- 클래스명 변경 관리 Mobile -----*/
+// mobile_search_box: 검색창 인풋 박스
+// &_active: 활성화 상태
+// mobile_search_result: 검색결과창
+// &_active: 활성화 상태
+// search_background: 검색창 배경
+// &_active: 활성화 상태
 var Header = function Header() {
-  return "\n    <div id = 'header_container'>\n      <div id = 'desktop_wrapper'>\n        <div class = 'logo_wrapper'>\n          <img src = ".concat(_logoImg.default, " alt = 'logoImg'/>\n        </div>\n        <div class = 'search_box'>\n          <input placeholder = '\uBC30\uC6B0\uACE0 \uC2F6\uC740 \uC9C0\uC2DD\uC744 \uC785\uB825\uD574\uBCF4\uC138\uC694.'/>\n          <div class = 'icon_wrapper'>\n            <img src = ").concat(_searchIcon.default, " alt = 'searchIcon'/>\n          </div>\n        </div>\n      </div>\n\n      <div id = 'mobile_wrapper'>\n        <div class = 'mobile_icon_wrapper'>\n          <img src = ").concat(_searchIcon.default, " alt 'searchIcon'/>\n        </div>\n        <div class = 'mobile_logo_wrapper'>\n          <img src = ").concat(_logoImg.default, " alt 'logoImg'/>\n        </div>\n      </div>\n\n    </div>\n  ");
+  return "\n    <div id = 'header_container'>\n\n      <div id = 'desktop_wrapper'>\n        <div class = 'logo_wrapper'>\n          <img src = ".concat(_logoImg.default, " alt = 'logoImg'/>\n        </div>\n        <div class = 'desktop_search_box'>\n          <input class = 'desktop_search_input' placeholder = '\uBC30\uC6B0\uACE0 \uC2F6\uC740 \uC9C0\uC2DD\uC744 \uC785\uB825\uD574\uBCF4\uC138\uC694.'/>\n          <div class = 'icon_wrapper'>\n            <img src = ").concat(_searchIcon.default, " alt = 'searchIcon'/>\n          </div>\n        </div>\n        <div class = 'desktop_search_result'>\n          <ul class = 'result'>\uAC15\uC758\uAC15\uC758\uAC15\uC758\uAC15\uC758\uAC15\uC758\uAC15\uC758\uAC15\uC758\uAC15\uC758\uAC15\uC758\uAC15\uC758</ul>\n          <ul class = 'result'>\uAC15\uC758\uAC15\uC758\uAC15\uC758\uAC15\uC758\uAC15\uC758\uAC15\uC758</ul>\n          <ul class = 'result'>\uAC15\uC758\uAC15\uC758\uAC15\uC758\uAC15\uC758\uAC15\uC758</ul>\n          <ul class = 'result'>\uAC15\uC758\uAC15\uC758\uAC15\uC758\uAC15\uC758\uAC15\uC758</ul>\n          <ul class = 'result'>\uAC15\uC758\uAC15\uC758\uAC15\uC758\uAC15\uC758</ul>\n        </div>\n      </div>\n        \n\n      <div id = 'mobile_wrapper'>\n        <div class = 'mobile_icon_wrapper'>\n          <img src = ").concat(_searchIcon.default, " alt 'searchIcon'/>\n        </div>\n        <div class = 'mobile_logo_wrapper'>\n          <img src = ").concat(_logoImg.default, " alt 'logoImg'/>\n        </div>\n\n        <div class = 'mobile_search_box'>\n          <input class = 'mobile_search_input' placeholder = '\uBC30\uC6B0\uACE0 \uC2F6\uC740 \uC9C0\uC2DD\uC744 \uC785\uB825\uD574\uBCF4\uC138\uC694.'/>\n          <div class = 'icon_wrapper'>\n            <img src = ").concat(_searchIcon.default, " alt = 'searchIcon'/>\n          </div>\n          <div class = 'close_wrapper'>\n            <img src = ").concat(_closeButton.default, " alt = 'closeButton'/>\n          </div>\n        </div>\n        \n        <div class = 'mobile_search_result'>\n          <ul class = 'result'>\uAC15\uC758\uAC15\uC758\uAC15\uC758\uAC15\uC758\uAC15\uC758\uAC15\uC758\uAC15\uC758\uAC15\uC758\uAC15\uC758\uAC15\uC758</ul>\n          <ul class = 'result'>\uAC15\uC758\uAC15\uC758\uAC15\uC758\uAC15\uC758\uAC15\uC758\uAC15\uC758</ul>\n          <ul class = 'result'>\uAC15\uC758\uAC15\uC758\uAC15\uC758\uAC15\uC758\uAC15\uC758</ul>\n          <ul class = 'result'>\uAC15\uC758\uAC15\uC758\uAC15\uC758\uAC15\uC758\uAC15\uC758</ul>\n          <ul class = 'result'>\uAC15\uC758\uAC15\uC758\uAC15\uC758\uAC15\uC758</ul>\n        </div>\n\n      </div>\n\n      <div class = 'search_background'></div>\n    </div>\n  ");
 };
 
 exports.Header = Header;
-},{"../images/logoImg.png":"src/images/logoImg.png","../images/searchIcon.png":"src/images/searchIcon.png"}],"node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+},{"../images/logoImg.png":"src/images/logoImg.png","../images/searchIcon.png":"src/images/searchIcon.png","../images/closeButton.png":"src/images/closeButton.png"}],"node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
 var bundleURL = null;
 
 function getBundleURLCached() {
@@ -342,21 +397,25 @@ var _MainPage = require("./pages/MainPage.js");
 
 var _DetailPage = require("./pages/DetailPage.js");
 
+var _AddModal = require("./components/modals/AddModal.js");
+
+var _AlertModal = require("./components/modals/AlertModal.js");
+
 var _Header = require("./components/Header.js");
 
 require("./scss/main.scss");
 
-/* Import Pages */
+/*----- Import Pages -----*/
 
-/* Import Components */
+/*----- Import Components -----*/
 
-/* Import Style */
+/*----- Import Style -----*/
 var App = function App() {
-  return "\n  <div>\n    ".concat((0, _Header.Header)(), "\n    ").concat((0, _MainPage.MainPage)(), "\n  </div>\n");
+  return "\n  <div>\n    <div>\n    </div>\n    <div>\n      ".concat((0, _Header.Header)(), "\n    </div>\n    <div>\n      ").concat((0, _MainPage.MainPage)(), "\n    </div>\n  </div>\n");
 };
 
 exports.App = App;
-},{"./pages/MainPage.js":"src/pages/MainPage.js","./pages/DetailPage.js":"src/pages/DetailPage.js","./components/Header.js":"src/components/Header.js","./scss/main.scss":"src/scss/main.scss"}],"src/main.js":[function(require,module,exports) {
+},{"./pages/MainPage.js":"src/pages/MainPage.js","./pages/DetailPage.js":"src/pages/DetailPage.js","./components/modals/AddModal.js":"src/components/modals/AddModal.js","./components/modals/AlertModal.js":"src/components/modals/AlertModal.js","./components/Header.js":"src/components/Header.js","./scss/main.scss":"src/scss/main.scss"}],"src/main.js":[function(require,module,exports) {
 "use strict";
 
 var _MyReact = require("./core/MyReact.js");
@@ -392,7 +451,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60061" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49717" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

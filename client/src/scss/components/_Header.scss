@@ -5,6 +5,7 @@
   align-items: center;
   justify-content: center;
   width: 100%;
+  left: 0;
   height: 78px;
   background-color: $white;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 10%);
@@ -12,9 +13,10 @@
   #desktop_wrapper {
     position: relative;
     align-items: center;
-    max-width: 1000px;
+    max-width: 1200px;
     width: 100%;
     height: 100%;
+
     @include mobile() {
       display: none;
     }
@@ -24,11 +26,15 @@
     @include desktop() {
       display: flex;
     }
+
     .logo_wrapper {
       position: relative;
+      display: flex;
+      align-items: center;
+      position: relative;
       width: 120px;
-      margin-left: 10px;
       cursor: pointer;
+      margin-left: 10px;
 
       > img {
         width: 100%;
@@ -37,7 +43,7 @@
       }
     }
 
-    .search_box {
+    .desktop_search_box {
       position: absolute;
       display: flex;
       align-items: center;
@@ -49,20 +55,45 @@
       border: 1px solid $searchBorder;
       border-radius: 25px;
       box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 5%);
+      &_active {
+        @extend .desktop_search_box;
+        background-color: $white;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        transition: all 1s;
+      }
+      &_typed {
+        z-index: 4;
+        @extend .desktop_search_box;
+        border: 1px solid $gray;
+        border-bottom: 0px;
+        box-shadow: none;
+        border-radius: 25px 25px 0px 0px;
+        background-color: $white;
+        transition: all 1s;
+      }
 
-      > input {
+      .desktop_search_input {
         margin-left: 25px;
         height: 100%;
         width: 400px;
-        background-color: transparent;
-        border: none;
         color: $searchColor;
         font-size: $searchDesktopFont;
-        outline: none;
-      }
-      input::placeholder {
-        color: $searchColor;
-        font-size: $searchDesktopFont;
+        &::placeholder {
+          color: $searchColor;
+          font-size: $searchDesktopFont;
+        }
+
+        &:focus {
+          @extend .desktop_search_input;
+
+          color: $dark;
+          transition: all 1s;
+          &::placeholder {
+            color: $gray;
+            font-size: $searchDesktopFont;
+            transition: all 1s;
+          }
+        }
       }
 
       .icon_wrapper {
@@ -78,6 +109,40 @@
         }
       }
     }
+
+    .desktop_search_result {
+      z-index: 4;
+      position: absolute;
+      display: none;
+      flex-direction: row;
+      flex-wrap: wrap;
+      width: 550px;
+      min-height: 60px;
+      left: 50%;
+      top: 55px;
+      background-color: $white;
+      border: 1px solid $gray;
+      border-top: none;
+      border-radius: 0px 0px 25px 25px;
+      box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 5%);
+      transform: translateX(-50%);
+      transition: all 1s;
+      &_active {
+        @extend .desktop_search_result;
+        display: flex;
+      }
+
+      .result {
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        min-height: 60px;
+        color: $dark;
+        font-size: $searchDesktopFont;
+        margin-left: 25px;
+      }
+    }
   }
 
   #mobile_wrapper {
@@ -86,6 +151,7 @@
     align-items: center;
     width: 100%;
     height: 100%;
+
     @include mobile() {
       display: flex;
     }
@@ -111,6 +177,8 @@
 
     .mobile_logo_wrapper {
       position: relative;
+      display: flex;
+      align-items: center;
       width: 120px;
       cursor: pointer;
 
@@ -119,6 +187,119 @@
         object-fit: cover;
         object-position: center;
       }
+    }
+
+    .mobile_search_box {
+      display: none;
+      &_active {
+        @extend .mobile_search_box;
+        z-index: 4;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        height: 78px;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: $white;
+        transition: all 1s;
+        max-width: 700px;
+        padding-right: 60px;
+      }
+
+      .mobile_search_input {
+        position: relative;
+        display: none;
+        margin-left: 50px;
+        height: 100%;
+        width: 100%;
+        color: $dark;
+        font-size: $searchTabFont;
+        &::placeholder {
+          @extend .mobile_search_input;
+          color: $gray;
+          font-size: $searchTabFont;
+        }
+
+        &_active {
+          z-index: 4;
+          display: flex;
+          @extend .mobile_search_input;
+          min-width: 300px;
+        }
+      }
+
+      .icon_wrapper {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        left: 10px;
+        cursor: pointer;
+
+        > img {
+          width: 100%;
+          opacity: 0.6;
+        }
+      }
+
+      .close_wrapper {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        right: 10px;
+        cursor: pointer;
+
+        > img {
+          width: 100%;
+          opacity: 0.6;
+        }
+      }
+    }
+
+    .mobile_search_result {
+      display: none;
+      &_active {
+        @extend .desktop_search_result;
+        z-index: 4;
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        width: 100%;
+        max-width: 700px;
+        height: 100%;
+        padding-left: 45px;
+        padding-right: 45px;
+        left: 0;
+        top: 78px;
+        background-color: rgba(255, 255, 255, 0.95);
+        transition: all 1s;
+        overflow: hidden;
+
+        .result {
+          display: flex;
+          align-items: center;
+          width: 100%;
+          min-height: 60px;
+          color: $dark;
+          font-size: $searchTabFont;
+        }
+      }
+    }
+  }
+
+  .search_background {
+    display: none;
+    z-index: 3;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    &_active {
+      @extend .search_background;
+      display: flex;
     }
   }
 }

@@ -3,8 +3,8 @@
 
 /*----- Article -----*/
 %cardSize {
-  width: 250px;
-  height: 250px;
+  width: 350px;
+  height: 350px;
 }
 /*----- Article -----*/
 
@@ -14,14 +14,14 @@
   height: 40px;
 }
 
-%inputModalSize {
+%addModalSize {
   width: 350px;
-  height: 300px;
+  height: 290px;
 }
 
 %alertModalSize {
   width: 350px;
-  height: 230px;
+  height: 240px;
 }
 /*----- Modal -----*/
 
@@ -39,9 +39,5 @@
 %buttonSize {
   width: 130px;
   height: 40px;
-  outline: none;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
 }
 /*----- Global -----*/

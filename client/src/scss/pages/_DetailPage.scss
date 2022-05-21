@@ -12,6 +12,7 @@
     display: flex;
     flex-wrap: wrap;
     top: 78px;
+
     @include mobile() {
       width: 100%;
       height: 100%;
@@ -21,7 +22,7 @@
       height: 100%;
     }
     @include desktop() {
-      width: 1000px;
+      max-width: 1200px;
       height: 100%;
     }
 
@@ -32,18 +33,15 @@
       justify-content: center;
       background-color: $jumbotron;
       width: 100%;
-      height: 100%;
-      border: 1px solid yellow;
+      transition: all 0.3s;
+
       @include mobile() {
-        height: 540px;
         flex-direction: column;
       }
       @include tab() {
-        height: 540px;
         flex-direction: column;
       }
       @include desktop() {
-        height: 365px;
         flex-direction: row;
       }
 
@@ -52,23 +50,23 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        // border: 5px solid gray;
+        transition: all 1s;
+        margin-top: 30px;
+        margin-bottom: 30px;
         @include mobile() {
           flex-direction: column;
-          height: 480px;
         }
         @include tab() {
           flex-direction: column;
-          height: 480px;
         }
         @include desktop() {
           width: 700px;
-          height: 260px;
           flex-direction: row;
         }
 
         .img_wrapper {
           border-radius: 10px;
+          transition: all 0.7s;
 
           @include mobile() {
             width: 300px;
@@ -90,61 +88,76 @@
             border-radius: 10px;
           }
         }
-      }
-      .contents_wrapper {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: space-between;
-        // border: 3px solid purple;
-        @include mobile() {
-          width: 300px;
-          height: 242px;
-        }
-        @include tab() {
-          width: 300px;
-          height: 242px;
-        }
-        @include desktop() {
-          width: 295px;
-          height: 260px;
-        }
-        .title {
-          width: 100%;
-          height: 92px;
-          color: $white;
-          @extend %detailTitleFont;
-          // border: 1px solid white;
-        }
-        .tutor {
-          @extend .title;
-          font-size: $detailTutorFont;
-          // border: 1px solid white;
-          height: 17px;
-        }
-        .price {
-          @extend .title;
-          @extend %detailTitleFont;
-          // border: 1px solid white;
-          height: 24px;
-        }
 
-        .button_wrapper {
+        .contents_wrapper {
           position: relative;
           display: flex;
-          justify-content: space-between;
-          height: 40px;
-          width: 100%;
-          // border: 1px solid yellow;
+          flex-wrap: wrap;
 
-          .goCartButton {
-            @extend %buttonSize;
-            @extend %buttonFont;
-            background-color: $gray;
-            color: $white;
+          @include mobile() {
+            width: 300px;
           }
-          .goBackButton {
-            @extend .goCartButton;
-            background-color: $signiture;
+          @include tab() {
+            width: 300px;
+          }
+          @include desktop() {
+            width: 295px;
+          }
+
+          .title {
+            position: relative;
+            width: 100%;
+            color: $white;
+            @extend %detailTitleFont;
+            @include mobile() {
+              margin-top: 30px;
+            }
+            @include tab() {
+              margin-top: 30px;
+            }
+            @include desktop() {
+              margin-top: 0px;
+            }
+          }
+          .mid_wrapper {
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            margin-top: 30px;
+            .tutor {
+              position: relative;
+              width: 100%;
+              font-size: $detailTutorFont;
+              color: $white;
+            }
+            .price {
+              position: relative;
+              margin-top: 30px;
+              color: $white;
+              @extend %detailTitleFont;
+
+              height: 24px;
+            }
+          }
+
+          .button_wrapper {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+            width: 100%;
+
+            .goCartButton {
+              @extend %buttonSize;
+              @extend %buttonFont;
+              background-color: $gray;
+              color: $white;
+            }
+            .goBackButton {
+              @extend .goCartButton;
+              background-color: $signiture;
+            }
           }
         }
       }

@@ -1,14 +1,22 @@
-/* Import Pages */
+/*----- Import Pages -----*/
 import { MainPage } from './pages/MainPage.js';
 import { DetailPage } from './pages/DetailPage.js';
-/* Import Components */
+/*----- Import Components -----*/
+import { AddModal } from './components/modals/AddModal.js';
+import { AlertModal } from './components/modals/AlertModal.js';
 import { Header } from './components/Header.js';
-/* Import Style */
+/*----- Import Style -----*/
 import './scss/main.scss';
 
 export const App = () => `
   <div>
-    ${Header()}
-    ${MainPage()}
+    <div>
+    </div>
+    <div>
+      ${Header()}
+    </div>
+    <div>
+      ${MainPage()}
+    </div>
   </div>
 `;

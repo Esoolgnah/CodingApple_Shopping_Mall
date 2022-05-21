@@ -12,12 +12,15 @@
 
 /*----- Import Component Style -----*/
 @import './components/Header.scss';
+@import './components/modals/AddModal.scss';
+@import './components//modals/AlertModal.scss';
 /*----- Import Component Style -----*/
 
 /*----- Global Style -----*/
 * {
   margin: 0px;
   padding: 0px;
+  box-sizing: border-box;
   font-family: $font-main;
 }
 
@@ -29,4 +32,18 @@ ol {
 a {
   text-decoration: none;
 }
+
+button {
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+input {
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
 /*----- Global Style -----*/

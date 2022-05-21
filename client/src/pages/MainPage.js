@@ -1,3 +1,4 @@
+/*----- Import Images -----*/
 import defaultImg from '../images/defaultImg.png';
 import addButton from '../images/addButton.png';
 
@@ -49,28 +50,18 @@ export const MainPage = () => {
               <p class = 'tutor'>지식공유자400</p>
               <p class = 'price'>₩150,000</p>
             </div>
+          </div>
+          <div class = 'card'>
+            <div class = 'img_wrapper'>
+              <img src = ${defaultImg} alt = 'defaultImg'/>
             </div>
-            <div class = 'card'>
-              <div class = 'img_wrapper'>
-                <img src = ${defaultImg} alt = 'defaultImg'/>
-              </div>
-              <div class = 'contents_wrapper'>
-                <p class = 'title'>Oracle SQL Database 11g PL</p>
-                <p class = 'tutor'>지식공유자400</p>
-                <p class = 'price'>₩150,000</p>
-              </div>
+            <div class = 'contents_wrapper'>
+              <p class = 'title'>Oracle SQL Database 11g PL</p>
+              <p class = 'tutor'>지식공유자400</p>
+              <p class = 'price'>₩150,000</p>
             </div>
-            <div class = 'card'>
-              <div class = 'img_wrapper'>
-                <img src = ${defaultImg} alt = 'defaultImg'/>
-              </div>
-              <div class = 'contents_wrapper'>
-                <p class = 'title'>Oracle SQL Database 11g PL</p>
-                <p class = 'tutor'>지식공유자400</p>
-                <p class = 'price'>₩150,000</p>
-              </div>
-            </div>
-            <div class = 'card'>
+          </div>
+          <div class = 'card'>
             <div class = 'img_wrapper'>
               <img src = ${defaultImg} alt = 'defaultImg'/>
             </div>
@@ -100,7 +91,48 @@ export const MainPage = () => {
               <p class = 'price'>₩150,000</p>
             </div>
           </div>
-        
+          <div class = 'card'>
+            <div class = 'img_wrapper'>
+              <img src = ${defaultImg} alt = 'defaultImg'/>
+            </div>
+            <div class = 'contents_wrapper'>
+              <p class = 'title'>Oracle SQL Database 11g PL</p>
+              <p class = 'tutor'>지식공유자400</p>
+              <p class = 'price'>₩150,000</p>
+            </div>
+          </div>
+          <div class = 'card'>
+            <div class = 'img_wrapper'>
+              <img src = ${defaultImg} alt = 'defaultImg'/>
+            </div>
+            <div class = 'contents_wrapper'>
+              <p class = 'title'>Oracle SQL Database 11g PL</p>
+              <p class = 'tutor'>지식공유자400</p>
+              <p class = 'price'>₩150,000</p>
+            </div>
+          </div>
+          <div class = 'card'>
+            <div class = 'img_wrapper'>
+              <img src = ${defaultImg} alt = 'defaultImg'/>
+            </div>
+            <div class = 'contents_wrapper'>
+              <p class = 'title'>Oracle SQL Database 11g PL</p>
+              <p class = 'tutor'>지식공유자400</p>
+              <p class = 'price'>₩150,000</p>
+            </div>
+          </div>
+          <div class = 'card'>
+            <div class = 'img_wrapper'>
+              <img src = ${defaultImg} alt = 'defaultImg'/>
+            </div>
+            <div class = 'contents_wrapper'>
+              <p class = 'title'>Oracle SQL Database 11g PL</p>
+              <p class = 'tutor'>지식공유자400</p>
+              <p class = 'price'>₩150,000</p>
+            </div>
+          </div>
+
+
         </div>
 
         <div class = 'add_button'>

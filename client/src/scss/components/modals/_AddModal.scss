@@ -1,0 +1,92 @@
+#addmodal_viewport {
+  z-index: 14;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+
+  #addmodal_background {
+    z-index: 15;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  #addmodal_container {
+    z-index: 16;
+    position: absolute;
+    @extend %addModalSize;
+    background-color: $white;
+    border-radius: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    .contents_wrapper {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      width: 310px;
+      height: 240px;
+      margin: 30px 20px 20px 20px;
+
+      > p {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @extend %modalTitleFont;
+        width: 100%;
+        height: 26px;
+      }
+
+      .title_input_wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+        @extend %inputSize;
+        width: 100%;
+        margin-top: 30px;
+        border: 1px solid $gray;
+        border-radius: 20px;
+        padding-left: 10px;
+        padding-right: 10px;
+        > input {
+          width: 100%;
+          color: $dark;
+          @extend %buttonFont;
+        }
+        input::placeholder {
+          color: $gray;
+          @extend %buttonFont;
+        }
+      }
+
+      .price_input_wrapper {
+        @extend .title_input_wrapper;
+      }
+
+      .button_wrapper {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin-top: 30px;
+
+        .write_button {
+          @extend %buttonSize;
+          @extend %buttonFont;
+          background-color: $signiture;
+          color: $white;
+        }
+
+        .cancel_button {
+          @extend .write_button;
+          background-color: $dark;
+        }
+      }
+    }
+  }
+}
