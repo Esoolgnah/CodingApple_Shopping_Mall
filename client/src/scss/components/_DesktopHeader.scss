@@ -1,0 +1,220 @@
+#desktop_wrapper {
+  position: relative;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+  height: 100%;
+
+  @include mobile() {
+    display: none;
+  }
+  @include tab() {
+    display: none;
+  }
+  @include desktop() {
+    display: flex;
+  }
+
+  .logo_wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 120px;
+    cursor: pointer;
+    margin-left: 10px;
+
+    > a {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+    }
+
+    > img {
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  .desktop_search_box {
+    z-index: 2;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    width: 550px;
+    height: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    &_active {
+      @extend .desktop_search_box;
+      z-index: 4;
+    }
+    .desktop_search_input {
+      padding-left: 25px;
+      padding-right: 25px;
+      height: 100%;
+      width: 100%;
+      background-color: $searchBack;
+      border: 1px solid $searchBorder;
+      border-radius: 25px;
+      box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 5%);
+      color: $searchColor;
+      font-size: $searchDesktopFont;
+      &::placeholder {
+        color: $searchColor;
+        font-size: $searchDesktopFont;
+      }
+
+      &:focus {
+        @extend .desktop_search_input;
+        background-color: $white;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        transition: all 0.5s;
+        color: $dark;
+        &::placeholder {
+          color: $gray;
+          font-size: $searchDesktopFont;
+        }
+      }
+
+      &_typed {
+        @extend .desktop_search_input;
+        border: 1px solid $gray;
+        color: $dark;
+        border-bottom: 0px;
+        box-shadow: none;
+        border-radius: 25px 25px 0px 0px;
+        background-color: $white;
+        transition: all 1s;
+        &::placeholder {
+          color: $gray;
+          font-size: $searchDesktopFont;
+        }
+        &:focus {
+          @extend .desktop_search_input_typed;
+          background-color: $white;
+          transition: all 0.5s;
+          color: $dark;
+        }
+      }
+    }
+    .icon_wrapper {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      right: 25px;
+      cursor: pointer;
+      > img {
+        width: 100%;
+        opacity: 0.6;
+      }
+    }
+  }
+
+  .desktop_search_result {
+    z-index: 2;
+    display: none;
+    &_active {
+      @extend .desktop_search_result;
+      z-index: 4;
+      position: absolute;
+      display: block;
+      width: 550px;
+      min-height: 60px;
+      max-height: 700px;
+      left: 50%;
+      top: 55px;
+      padding-left: 25px;
+      padding-right: 25px;
+      color: $white;
+      font-size: 0px;
+      background-color: $white;
+      border: 1px solid $gray;
+      border-top: none;
+      border-radius: 0px 0px 25px 25px;
+      box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 5%);
+      transform: translateX(-50%);
+      transition: all 1s;
+      overflow-x: hidden;
+      overflow-y: scroll;
+      &::-webkit-scrollbar {
+        width: 6px;
+      }
+      /* 스크롤바 막대 설정*/
+      &::-webkit-scrollbar-thumb {
+        /* 스크롤바 막대 높이 설정 */
+        height: 16%;
+        background-color: $signiture;
+        /* 스크롤바 둥글게 설정 */
+        border-radius: 15px;
+      }
+      /* 스크롤바 뒷 배경 설정*/
+      ::-webkit-scrollbar-track {
+        background-color: rgba(0, 0, 0, 0);
+      }
+    }
+
+    .result {
+      position: relative;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      min-height: 60px;
+      color: $dark;
+      font-size: $searchDesktopFont;
+      cursor: pointer;
+      &:hover {
+        color: $signiture;
+        transition: all 0.2s;
+      }
+    }
+
+    .desktop_search_loading_wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      color: $dark;
+      font-size: $titleFont;
+
+      .img_wrapper {
+        position: relative;
+        width: 30px;
+        height: 30px;
+
+        > img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+}
+
+.search_desktop_background {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  &_active {
+    z-index: 3;
+    @extend .search_desktop_background;
+
+    @include mobile() {
+      display: none;
+    }
+    @include tab() {
+      display: none;
+    }
+    @include desktop() {
+      display: flex;
+    }
+  }
+}

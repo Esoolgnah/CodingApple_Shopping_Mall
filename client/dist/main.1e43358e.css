@@ -39,7 +39,7 @@
 /*----- Jumbotron -----*/
 /*----- Jumbotron -----*/
 /*----- Global -----*/
-#alertmodal_viewport #alertmodal_container .contents_wrapper .button_wrapper .ok_button, #addmodal_viewport #addmodal_container .contents_wrapper .button_wrapper .write_button, #addmodal_viewport #addmodal_container .contents_wrapper .button_wrapper .cancel_button, #detailpage_viewport #detailpage_container #jumbotron .all_wrapper .contents_wrapper .button_wrapper .goCartButton, #detailpage_viewport #detailpage_container #jumbotron .all_wrapper .contents_wrapper .button_wrapper .goBackButton {
+#alertmodal_viewport #alertmodal_container .contents_wrapper .button_wrapper .ok_button, #addmodal_viewport #addmodal_container .contents_wrapper .button_wrapper .write_button, #addmodal_viewport #addmodal_container .contents_wrapper .button_wrapper .cancel_button, #detailpage_viewport #detailpage_container #jumbotron .all_wrapper .contents_wrapper .button_wrapper > a, #detailpage_viewport #detailpage_container #jumbotron .all_wrapper .contents_wrapper .button_wrapper .goCartButton, #detailpage_viewport #detailpage_container #jumbotron .all_wrapper .contents_wrapper .button_wrapper .goBackButton {
   width: 130px;
   height: 40px;
 }
@@ -149,8 +149,13 @@
   position: relative;
   display: flex;
   flex-wrap: wrap;
+  width: 100%;
   justify-content: space-between;
   transition: all 0.6s;
+  font-size: 0px;
+  color: transparent;
+  line-height: 0;
+  font-size: 0;
 }
 @media (max-width: 767px) {
   #mainpage_viewport #mainpage_container .posts_wrapper {
@@ -167,8 +172,23 @@
     max-width: 1200px;
   }
 }
+#mainpage_viewport #mainpage_container .posts_wrapper .posts_wrapper_loading_zone {
+  position: absolute;
+  margin-top: 100px;
+  width: 50px;
+  height: 50px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+#mainpage_viewport #mainpage_container .posts_wrapper .posts_wrapper_loading_zone > img {
+  width: 100%;
+  height: 100%;
+}
 #mainpage_viewport #mainpage_container .posts_wrapper .card {
   position: relative;
+  max-width: 350px;
+  margin-left: 0;
   cursor: pointer;
 }
 @media (max-width: 767px) {
@@ -200,16 +220,19 @@
   position: relative;
   display: flex;
   flex-wrap: wrap;
-  width: 250px;
+  width: 350px;
   height: 107px;
 }
 #mainpage_viewport #mainpage_container .posts_wrapper .card .contents_wrapper .title, #mainpage_viewport #mainpage_container .posts_wrapper .card .contents_wrapper .price {
   position: relative;
   display: flex;
   align-items: center;
-  width: 100%;
+  width: 350px;
   margin-top: 18px;
   color: #454545;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 #mainpage_viewport #mainpage_container .posts_wrapper .card .contents_wrapper .tutor {
   position: relative;
@@ -224,6 +247,19 @@
   position: relative;
   color: #2d5bb8;
   margin-top: 18px;
+}
+#mainpage_viewport #mainpage_container .posts_new_loading_zone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 50px;
+  margin-bottom: 100px;
+}
+#mainpage_viewport #mainpage_container .posts_new_loading_zone > img {
+  position: relative;
+  width: 50px;
+  height: 50px;
 }
 #mainpage_viewport #mainpage_container .add_button {
   position: fixed;
@@ -449,6 +485,9 @@
 #detailpage_viewport #detailpage_container #jumbotron .all_wrapper .contents_wrapper .button_wrapper .goBackButton {
   background-color: #58c179;
 }
+#detailpage_viewport #detailpage_container #jumbotron .all_wrapper .contents_wrapper .button_wrapper > a {
+  right: 0;
+}
 
 /*----- Import Page Style -----*/
 /*----- Import Component Style -----*/
@@ -464,7 +503,8 @@
   background-color: #ffffff;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
 }
-#header_container #desktop_wrapper {
+
+#desktop_wrapper {
   position: relative;
   align-items: center;
   max-width: 1200px;
@@ -472,21 +512,21 @@
   height: 100%;
 }
 @media (max-width: 767px) {
-  #header_container #desktop_wrapper {
+  #desktop_wrapper {
     display: none;
   }
 }
 @media (min-width: 768px) {
-  #header_container #desktop_wrapper {
+  #desktop_wrapper {
     display: none;
   }
 }
 @media (min-width: 1200px) {
-  #header_container #desktop_wrapper {
+  #desktop_wrapper {
     display: flex;
   }
 }
-#header_container #desktop_wrapper .logo_wrapper {
+#desktop_wrapper .logo_wrapper {
   position: relative;
   display: flex;
   align-items: center;
@@ -495,12 +535,18 @@
   cursor: pointer;
   margin-left: 10px;
 }
-#header_container #desktop_wrapper .logo_wrapper > img {
+#desktop_wrapper .logo_wrapper > a {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+#desktop_wrapper .logo_wrapper > img {
   width: 100%;
   object-fit: cover;
   object-position: center;
 }
-#header_container #desktop_wrapper .desktop_search_box, #header_container #desktop_wrapper .desktop_search_box_active {
+#desktop_wrapper .desktop_search_box, #desktop_wrapper .desktop_search_box_active {
   z-index: 2;
   position: absolute;
   display: flex;
@@ -510,10 +556,10 @@
   left: 50%;
   transform: translateX(-50%);
 }
-#header_container #desktop_wrapper .desktop_search_box_active {
+#desktop_wrapper .desktop_search_box_active {
   z-index: 4;
 }
-#header_container #desktop_wrapper .desktop_search_box .desktop_search_input, #header_container #desktop_wrapper .desktop_search_box .desktop_search_input_typed, #header_container #desktop_wrapper .desktop_search_box .desktop_search_input_typed:focus, #header_container #desktop_wrapper .desktop_search_box .desktop_search_box_active .desktop_search_input_typed, #header_container #desktop_wrapper .desktop_search_box_active .desktop_search_box .desktop_search_input_typed, #header_container #desktop_wrapper .desktop_search_box .desktop_search_input:focus, #header_container #desktop_wrapper .desktop_search_box_active .desktop_search_input, #header_container #desktop_wrapper .desktop_search_box_active .desktop_search_input_typed, #header_container #desktop_wrapper .desktop_search_box_active .desktop_search_input_typed:focus, #header_container #desktop_wrapper .desktop_search_box_active .desktop_search_input:focus {
+#desktop_wrapper .desktop_search_box .desktop_search_input, #desktop_wrapper .desktop_search_box .desktop_search_input_typed, #desktop_wrapper .desktop_search_box .desktop_search_input_typed:focus, #desktop_wrapper .desktop_search_box .desktop_search_box_active .desktop_search_input_typed, #desktop_wrapper .desktop_search_box_active .desktop_search_box .desktop_search_input_typed, #desktop_wrapper .desktop_search_box .desktop_search_input:focus, #desktop_wrapper .desktop_search_box_active .desktop_search_input, #desktop_wrapper .desktop_search_box_active .desktop_search_input_typed, #desktop_wrapper .desktop_search_box_active .desktop_search_input_typed:focus, #desktop_wrapper .desktop_search_box_active .desktop_search_input:focus {
   padding-left: 25px;
   padding-right: 25px;
   height: 100%;
@@ -525,21 +571,21 @@
   color: #99c9b8;
   font-size: 15px;
 }
-#header_container #desktop_wrapper .desktop_search_box .desktop_search_input::placeholder, #header_container #desktop_wrapper .desktop_search_box .desktop_search_input_typed::placeholder, #header_container #desktop_wrapper .desktop_search_box .desktop_search_input_typed:focus::placeholder, #header_container #desktop_wrapper .desktop_search_box .desktop_search_box_active .desktop_search_input_typed::placeholder, #header_container #desktop_wrapper .desktop_search_box_active .desktop_search_box .desktop_search_input_typed::placeholder, #header_container #desktop_wrapper .desktop_search_box .desktop_search_input:focus::placeholder, #header_container #desktop_wrapper .desktop_search_box_active .desktop_search_input::placeholder, #header_container #desktop_wrapper .desktop_search_box_active .desktop_search_input_typed::placeholder, #header_container #desktop_wrapper .desktop_search_box_active .desktop_search_input_typed:focus::placeholder, #header_container #desktop_wrapper .desktop_search_box_active .desktop_search_input:focus::placeholder {
+#desktop_wrapper .desktop_search_box .desktop_search_input::placeholder, #desktop_wrapper .desktop_search_box .desktop_search_input_typed::placeholder, #desktop_wrapper .desktop_search_box .desktop_search_input_typed:focus::placeholder, #desktop_wrapper .desktop_search_box .desktop_search_box_active .desktop_search_input_typed::placeholder, #desktop_wrapper .desktop_search_box_active .desktop_search_box .desktop_search_input_typed::placeholder, #desktop_wrapper .desktop_search_box .desktop_search_input:focus::placeholder, #desktop_wrapper .desktop_search_box_active .desktop_search_input::placeholder, #desktop_wrapper .desktop_search_box_active .desktop_search_input_typed::placeholder, #desktop_wrapper .desktop_search_box_active .desktop_search_input_typed:focus::placeholder, #desktop_wrapper .desktop_search_box_active .desktop_search_input:focus::placeholder {
   color: #99c9b8;
   font-size: 15px;
 }
-#header_container #desktop_wrapper .desktop_search_box .desktop_search_input:focus, #header_container #desktop_wrapper .desktop_search_box .desktop_search_input_typed:focus, #header_container #desktop_wrapper .desktop_search_box_active .desktop_search_input:focus, #header_container #desktop_wrapper .desktop_search_box_active .desktop_search_input_typed:focus {
+#desktop_wrapper .desktop_search_box .desktop_search_input:focus, #desktop_wrapper .desktop_search_box .desktop_search_input_typed:focus, #desktop_wrapper .desktop_search_box_active .desktop_search_input:focus, #desktop_wrapper .desktop_search_box_active .desktop_search_input_typed:focus {
   background-color: #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.1);
   transition: all 0.5s;
   color: #303030;
 }
-#header_container #desktop_wrapper .desktop_search_box .desktop_search_input:focus::placeholder, #header_container #desktop_wrapper .desktop_search_box .desktop_search_input_typed:focus::placeholder, #header_container #desktop_wrapper .desktop_search_box_active .desktop_search_input:focus::placeholder, #header_container #desktop_wrapper .desktop_search_box_active .desktop_search_input_typed:focus::placeholder {
+#desktop_wrapper .desktop_search_box .desktop_search_input:focus::placeholder, #desktop_wrapper .desktop_search_box .desktop_search_input_typed:focus::placeholder, #desktop_wrapper .desktop_search_box_active .desktop_search_input:focus::placeholder, #desktop_wrapper .desktop_search_box_active .desktop_search_input_typed:focus::placeholder {
   color: #c4c4c4;
   font-size: 15px;
 }
-#header_container #desktop_wrapper .desktop_search_box .desktop_search_input_typed, #header_container #desktop_wrapper .desktop_search_box .desktop_search_input_typed:focus, #header_container #desktop_wrapper .desktop_search_box_active .desktop_search_input_typed, #header_container #desktop_wrapper .desktop_search_box_active .desktop_search_input_typed:focus {
+#desktop_wrapper .desktop_search_box .desktop_search_input_typed, #desktop_wrapper .desktop_search_box .desktop_search_input_typed:focus, #desktop_wrapper .desktop_search_box_active .desktop_search_input_typed, #desktop_wrapper .desktop_search_box_active .desktop_search_input_typed:focus {
   border: 1px solid #c4c4c4;
   color: #303030;
   border-bottom: 0px;
@@ -548,31 +594,31 @@
   background-color: #ffffff;
   transition: all 1s;
 }
-#header_container #desktop_wrapper .desktop_search_box .desktop_search_input_typed::placeholder, #header_container #desktop_wrapper .desktop_search_box .desktop_search_input_typed:focus::placeholder, #header_container #desktop_wrapper .desktop_search_box_active .desktop_search_input_typed::placeholder, #header_container #desktop_wrapper .desktop_search_box_active .desktop_search_input_typed:focus::placeholder {
-  color: #303030;
+#desktop_wrapper .desktop_search_box .desktop_search_input_typed::placeholder, #desktop_wrapper .desktop_search_box .desktop_search_input_typed:focus::placeholder, #desktop_wrapper .desktop_search_box_active .desktop_search_input_typed::placeholder, #desktop_wrapper .desktop_search_box_active .desktop_search_input_typed:focus::placeholder {
+  color: #c4c4c4;
   font-size: 15px;
 }
-#header_container #desktop_wrapper .desktop_search_box .desktop_search_input_typed:focus, #header_container #desktop_wrapper .desktop_search_box_active .desktop_search_input_typed:focus {
+#desktop_wrapper .desktop_search_box .desktop_search_input_typed:focus, #desktop_wrapper .desktop_search_box_active .desktop_search_input_typed:focus {
   background-color: #ffffff;
   transition: all 0.5s;
   color: #303030;
 }
-#header_container #desktop_wrapper .desktop_search_box .icon_wrapper, #header_container #desktop_wrapper .desktop_search_box_active .icon_wrapper {
+#desktop_wrapper .desktop_search_box .icon_wrapper, #desktop_wrapper .desktop_search_box_active .icon_wrapper {
   position: absolute;
   width: 20px;
   height: 20px;
   right: 25px;
   cursor: pointer;
 }
-#header_container #desktop_wrapper .desktop_search_box .icon_wrapper > img, #header_container #desktop_wrapper .desktop_search_box_active .icon_wrapper > img {
+#desktop_wrapper .desktop_search_box .icon_wrapper > img, #desktop_wrapper .desktop_search_box_active .icon_wrapper > img {
   width: 100%;
   opacity: 0.6;
 }
-#header_container #desktop_wrapper .desktop_search_result, #header_container #desktop_wrapper #mobile_wrapper .mobile_search_result_active, #header_container #mobile_wrapper #desktop_wrapper .mobile_search_result_active, #header_container #desktop_wrapper .desktop_search_result_active {
+#desktop_wrapper .desktop_search_result, #desktop_wrapper #mobile_wrapper .mobile_search_result_active, #mobile_wrapper #desktop_wrapper .mobile_search_result_active, #desktop_wrapper .desktop_search_result_active {
   z-index: 2;
   display: none;
 }
-#header_container #desktop_wrapper .desktop_search_result_active {
+#desktop_wrapper .desktop_search_result_active {
   z-index: 4;
   position: absolute;
   display: block;
@@ -597,20 +643,20 @@
   /* 스크롤바 막대 설정*/
   /* 스크롤바 뒷 배경 설정*/
 }
-#header_container #desktop_wrapper .desktop_search_result_active::-webkit-scrollbar {
+#desktop_wrapper .desktop_search_result_active::-webkit-scrollbar {
   width: 6px;
 }
-#header_container #desktop_wrapper .desktop_search_result_active::-webkit-scrollbar-thumb {
+#desktop_wrapper .desktop_search_result_active::-webkit-scrollbar-thumb {
   /* 스크롤바 막대 높이 설정 */
   height: 16%;
   background-color: #58c179;
   /* 스크롤바 둥글게 설정 */
   border-radius: 15px;
 }
-#header_container #desktop_wrapper .desktop_search_result_active ::-webkit-scrollbar-track {
+#desktop_wrapper .desktop_search_result_active ::-webkit-scrollbar-track {
   background-color: rgba(0, 0, 0, 0);
 }
-#header_container #desktop_wrapper .desktop_search_result .result, #header_container #desktop_wrapper #mobile_wrapper .mobile_search_result_active .result, #header_container #mobile_wrapper #desktop_wrapper .mobile_search_result_active .result, #header_container #desktop_wrapper .desktop_search_result_active .result {
+#desktop_wrapper .desktop_search_result .result, #desktop_wrapper #mobile_wrapper .mobile_search_result_active .result, #mobile_wrapper #desktop_wrapper .mobile_search_result_active .result, #desktop_wrapper .desktop_search_result_active .result {
   position: relative;
   display: flex;
   align-items: center;
@@ -620,11 +666,11 @@
   font-size: 15px;
   cursor: pointer;
 }
-#header_container #desktop_wrapper .desktop_search_result .result:hover, #header_container #desktop_wrapper #mobile_wrapper .mobile_search_result_active .result:hover, #header_container #mobile_wrapper #desktop_wrapper .mobile_search_result_active .result:hover, #header_container #desktop_wrapper .desktop_search_result_active .result:hover {
+#desktop_wrapper .desktop_search_result .result:hover, #desktop_wrapper #mobile_wrapper .mobile_search_result_active .result:hover, #mobile_wrapper #desktop_wrapper .mobile_search_result_active .result:hover, #desktop_wrapper .desktop_search_result_active .result:hover {
   color: #58c179;
   transition: all 0.2s;
 }
-#header_container #desktop_wrapper .desktop_search_result .desktop_search_loading_wrapper, #header_container #desktop_wrapper #mobile_wrapper .mobile_search_result_active .desktop_search_loading_wrapper, #header_container #mobile_wrapper #desktop_wrapper .mobile_search_result_active .desktop_search_loading_wrapper, #header_container #desktop_wrapper .desktop_search_result_active .desktop_search_loading_wrapper {
+#desktop_wrapper .desktop_search_result .desktop_search_loading_wrapper, #desktop_wrapper #mobile_wrapper .mobile_search_result_active .desktop_search_loading_wrapper, #mobile_wrapper #desktop_wrapper .mobile_search_result_active .desktop_search_loading_wrapper, #desktop_wrapper .desktop_search_result_active .desktop_search_loading_wrapper {
   position: relative;
   display: flex;
   align-items: center;
@@ -635,16 +681,44 @@
   color: #303030;
   font-size: 24px;
 }
-#header_container #desktop_wrapper .desktop_search_result .desktop_search_loading_wrapper .img_wrapper, #header_container #desktop_wrapper #mobile_wrapper .mobile_search_result_active .desktop_search_loading_wrapper .img_wrapper, #header_container #mobile_wrapper #desktop_wrapper .mobile_search_result_active .desktop_search_loading_wrapper .img_wrapper, #header_container #desktop_wrapper .desktop_search_result_active .desktop_search_loading_wrapper .img_wrapper {
+#desktop_wrapper .desktop_search_result .desktop_search_loading_wrapper .img_wrapper, #desktop_wrapper #mobile_wrapper .mobile_search_result_active .desktop_search_loading_wrapper .img_wrapper, #mobile_wrapper #desktop_wrapper .mobile_search_result_active .desktop_search_loading_wrapper .img_wrapper, #desktop_wrapper .desktop_search_result_active .desktop_search_loading_wrapper .img_wrapper {
   position: relative;
   width: 30px;
   height: 30px;
 }
-#header_container #desktop_wrapper .desktop_search_result .desktop_search_loading_wrapper .img_wrapper > img, #header_container #desktop_wrapper #mobile_wrapper .mobile_search_result_active .desktop_search_loading_wrapper .img_wrapper > img, #header_container #mobile_wrapper #desktop_wrapper .mobile_search_result_active .desktop_search_loading_wrapper .img_wrapper > img, #header_container #desktop_wrapper .desktop_search_result_active .desktop_search_loading_wrapper .img_wrapper > img {
+#desktop_wrapper .desktop_search_result .desktop_search_loading_wrapper .img_wrapper > img, #desktop_wrapper #mobile_wrapper .mobile_search_result_active .desktop_search_loading_wrapper .img_wrapper > img, #mobile_wrapper #desktop_wrapper .mobile_search_result_active .desktop_search_loading_wrapper .img_wrapper > img, #desktop_wrapper .desktop_search_result_active .desktop_search_loading_wrapper .img_wrapper > img {
   width: 100%;
   height: 100%;
 }
-#header_container #mobile_wrapper {
+
+.search_desktop_background, .search_desktop_background_active {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.search_desktop_background_active {
+  z-index: 3;
+}
+@media (max-width: 767px) {
+  .search_desktop_background_active {
+    display: none;
+  }
+}
+@media (min-width: 768px) {
+  .search_desktop_background_active {
+    display: none;
+  }
+}
+@media (min-width: 1200px) {
+  .search_desktop_background_active {
+    display: flex;
+  }
+}
+
+#mobile_wrapper {
   position: relative;
   justify-content: center;
   align-items: center;
@@ -652,48 +726,48 @@
   height: 100%;
 }
 @media (max-width: 767px) {
-  #header_container #mobile_wrapper {
+  #mobile_wrapper {
     display: flex;
   }
 }
 @media (min-width: 768px) {
-  #header_container #mobile_wrapper {
+  #mobile_wrapper {
     display: flex;
   }
 }
 @media (min-width: 1200px) {
-  #header_container #mobile_wrapper {
+  #mobile_wrapper {
     display: none;
   }
 }
-#header_container #mobile_wrapper .mobile_icon_wrapper {
+#mobile_wrapper .mobile_icon_wrapper {
   position: absolute;
   width: 30px;
   height: 30px;
   left: 10px;
   cursor: pointer;
 }
-#header_container #mobile_wrapper .mobile_icon_wrapper > img {
+#mobile_wrapper .mobile_icon_wrapper > img {
   width: 100%;
   opacity: 0.6;
 }
-#header_container #mobile_wrapper .mobile_logo_wrapper {
+#mobile_wrapper .mobile_logo_wrapper {
   position: relative;
   display: flex;
   align-items: center;
   width: 120px;
   cursor: pointer;
 }
-#header_container #mobile_wrapper .mobile_logo_wrapper > img {
+#mobile_wrapper .mobile_logo_wrapper > img {
   width: 100%;
   object-fit: cover;
   object-position: center;
 }
-#header_container #mobile_wrapper .mobile_search_box, #header_container #mobile_wrapper .mobile_search_box_active {
+#mobile_wrapper .mobile_search_box, #mobile_wrapper .mobile_search_box_active {
   z-index: 2;
   display: none;
 }
-#header_container #mobile_wrapper .mobile_search_box_active {
+#mobile_wrapper .mobile_search_box_active {
   z-index: 4;
   position: absolute;
   display: flex;
@@ -707,7 +781,7 @@
   max-width: 700px;
   padding-right: 60px;
 }
-#header_container #mobile_wrapper .mobile_search_box .mobile_search_input, #header_container #mobile_wrapper .mobile_search_box .mobile_search_input_active, #header_container #mobile_wrapper .mobile_search_box .mobile_search_box_active .mobile_search_input_active, #header_container #mobile_wrapper .mobile_search_box_active .mobile_search_box .mobile_search_input_active, #header_container #mobile_wrapper .mobile_search_box .mobile_search_input_active::placeholder, #header_container #mobile_wrapper .mobile_search_box .mobile_search_input::placeholder, #header_container #mobile_wrapper .mobile_search_box_active .mobile_search_input, #header_container #mobile_wrapper .mobile_search_box_active .mobile_search_input_active, #header_container #mobile_wrapper .mobile_search_box_active .mobile_search_input_active::placeholder, #header_container #mobile_wrapper .mobile_search_box_active .mobile_search_input::placeholder {
+#mobile_wrapper .mobile_search_box .mobile_search_input, #mobile_wrapper .mobile_search_box .mobile_search_input_active, #mobile_wrapper .mobile_search_box .mobile_search_box_active .mobile_search_input_active, #mobile_wrapper .mobile_search_box_active .mobile_search_box .mobile_search_input_active, #mobile_wrapper .mobile_search_box .mobile_search_input_active::placeholder, #mobile_wrapper .mobile_search_box .mobile_search_input::placeholder, #mobile_wrapper .mobile_search_box_active .mobile_search_input, #mobile_wrapper .mobile_search_box_active .mobile_search_input_active, #mobile_wrapper .mobile_search_box_active .mobile_search_input_active::placeholder, #mobile_wrapper .mobile_search_box_active .mobile_search_input::placeholder {
   position: relative;
   display: none;
   height: 100%;
@@ -717,42 +791,42 @@
   font-size: 20px;
   border: none;
 }
-#header_container #mobile_wrapper .mobile_search_box .mobile_search_input::placeholder, #header_container #mobile_wrapper .mobile_search_box .mobile_search_input_active::placeholder, #header_container #mobile_wrapper .mobile_search_box_active .mobile_search_input::placeholder, #header_container #mobile_wrapper .mobile_search_box_active .mobile_search_input_active::placeholder {
+#mobile_wrapper .mobile_search_box .mobile_search_input::placeholder, #mobile_wrapper .mobile_search_box .mobile_search_input_active::placeholder, #mobile_wrapper .mobile_search_box_active .mobile_search_input::placeholder, #mobile_wrapper .mobile_search_box_active .mobile_search_input_active::placeholder {
   color: #c4c4c4;
   font-size: 20px;
 }
-#header_container #mobile_wrapper .mobile_search_box .mobile_search_input_active, #header_container #mobile_wrapper .mobile_search_box_active .mobile_search_input_active {
+#mobile_wrapper .mobile_search_box .mobile_search_input_active, #mobile_wrapper .mobile_search_box_active .mobile_search_input_active {
   display: flex;
   min-width: 300px;
 }
-#header_container #mobile_wrapper .mobile_search_box .icon_wrapper, #header_container #mobile_wrapper .mobile_search_box_active .icon_wrapper {
+#mobile_wrapper .mobile_search_box .icon_wrapper, #mobile_wrapper .mobile_search_box_active .icon_wrapper {
   position: absolute;
   width: 30px;
   height: 30px;
   left: 10px;
   cursor: pointer;
 }
-#header_container #mobile_wrapper .mobile_search_box .icon_wrapper > img, #header_container #mobile_wrapper .mobile_search_box_active .icon_wrapper > img {
+#mobile_wrapper .mobile_search_box .icon_wrapper > img, #mobile_wrapper .mobile_search_box_active .icon_wrapper > img {
   width: 100%;
   opacity: 0.6;
 }
-#header_container #mobile_wrapper .mobile_search_box .close_wrapper, #header_container #mobile_wrapper .mobile_search_box_active .close_wrapper {
+#mobile_wrapper .mobile_search_box .close_wrapper, #mobile_wrapper .mobile_search_box_active .close_wrapper {
   position: absolute;
   width: 30px;
   height: 30px;
   right: 10px;
   cursor: pointer;
 }
-#header_container #mobile_wrapper .mobile_search_box .close_wrapper > img, #header_container #mobile_wrapper .mobile_search_box_active .close_wrapper > img {
+#mobile_wrapper .mobile_search_box .close_wrapper > img, #mobile_wrapper .mobile_search_box_active .close_wrapper > img {
   width: 100%;
   opacity: 0.6;
 }
-#header_container #mobile_wrapper .mobile_search_result {
+#mobile_wrapper .mobile_search_result {
   z-index: 2;
   display: none;
   transition: all 1s;
 }
-#header_container #mobile_wrapper .mobile_search_result_active {
+#mobile_wrapper .mobile_search_result_active {
   z-index: 4;
   position: fixed;
   display: block;
@@ -772,20 +846,20 @@
   /* 스크롤바 막대 설정*/
   /* 스크롤바 뒷 배경 설정*/
 }
-#header_container #mobile_wrapper .mobile_search_result_active::-webkit-scrollbar {
+#mobile_wrapper .mobile_search_result_active::-webkit-scrollbar {
   width: 6px;
 }
-#header_container #mobile_wrapper .mobile_search_result_active::-webkit-scrollbar-thumb {
+#mobile_wrapper .mobile_search_result_active::-webkit-scrollbar-thumb {
   /* 스크롤바 막대 높이 설정 */
   height: 16%;
   background-color: #58c179;
   /* 스크롤바 둥글게 설정 */
   border-radius: 10px;
 }
-#header_container #mobile_wrapper .mobile_search_result_active ::-webkit-scrollbar-track {
+#mobile_wrapper .mobile_search_result_active ::-webkit-scrollbar-track {
   background-color: rgba(0, 0, 0, 0);
 }
-#header_container #mobile_wrapper .mobile_search_result_active .result {
+#mobile_wrapper .mobile_search_result_active .result {
   position: relative;
   display: flex;
   align-items: center;
@@ -795,11 +869,11 @@
   font-size: 20px;
   cursor: pointer;
 }
-#header_container #mobile_wrapper .mobile_search_result_active .result:hover {
+#mobile_wrapper .mobile_search_result_active .result:hover {
   color: #58c179;
   transition: all 0.2s;
 }
-#header_container #mobile_wrapper .mobile_search_result_active .mobile_search_loading_wrapper {
+#mobile_wrapper .mobile_search_result_active .mobile_search_loading_wrapper {
   position: relative;
   display: flex;
   align-items: center;
@@ -810,42 +884,17 @@
   color: #303030;
   font-size: 24px;
 }
-#header_container #mobile_wrapper .mobile_search_result_active .mobile_search_loading_wrapper .img_wrapper {
+#mobile_wrapper .mobile_search_result_active .mobile_search_loading_wrapper .img_wrapper {
   position: relative;
   width: 50px;
   height: 50px;
 }
-#header_container #mobile_wrapper .mobile_search_result_active .mobile_search_loading_wrapper .img_wrapper > img {
+#mobile_wrapper .mobile_search_result_active .mobile_search_loading_wrapper .img_wrapper > img {
   width: 100%;
   height: 100%;
 }
-#header_container .search_desktop_background, #header_container .search_desktop_background_active {
-  display: none;
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-}
-#header_container .search_desktop_background_active {
-  z-index: 3;
-}
-@media (max-width: 767px) {
-  #header_container .search_desktop_background_active {
-    display: none;
-  }
-}
-@media (min-width: 768px) {
-  #header_container .search_desktop_background_active {
-    display: none;
-  }
-}
-@media (min-width: 1200px) {
-  #header_container .search_desktop_background_active {
-    display: flex;
-  }
-}
-#header_container .search_mobile_background, #header_container .search_mobile_background_active {
+
+.search_mobile_background, .search_mobile_background_active {
   display: none;
   position: fixed;
   width: 100%;
@@ -854,21 +903,21 @@
   left: 0;
   background-color: rgba(0, 0, 0, 0.5);
 }
-#header_container .search_mobile_background_active {
+.search_mobile_background_active {
   z-index: 3;
 }
 @media (max-width: 767px) {
-  #header_container .search_mobile_background_active {
+  .search_mobile_background_active {
     display: flex;
   }
 }
 @media (min-width: 768px) {
-  #header_container .search_mobile_background_active {
+  .search_mobile_background_active {
     display: flex;
   }
 }
 @media (min-width: 1200px) {
-  #header_container .search_mobile_background_active {
+  .search_mobile_background_active {
     display: none;
   }
 }
@@ -927,6 +976,7 @@
 #addmodal_viewport #addmodal_container .contents_wrapper .title_input_wrapper > input, #addmodal_viewport #addmodal_container .contents_wrapper .price_input_wrapper > input {
   width: 100%;
   color: #303030;
+  border: none;
 }
 #addmodal_viewport #addmodal_container .contents_wrapper .title_input_wrapper input::placeholder, #addmodal_viewport #addmodal_container .contents_wrapper .price_input_wrapper input::placeholder {
   color: #c4c4c4;
@@ -1029,6 +1079,10 @@ ol {
 
 a {
   text-decoration: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
 }
 
 button {

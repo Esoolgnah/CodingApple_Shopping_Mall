@@ -1,0 +1,219 @@
+#mobile_wrapper {
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+
+  @include mobile() {
+    display: flex;
+  }
+  @include tab() {
+    display: flex;
+  }
+  @include desktop() {
+    display: none;
+  }
+
+  .mobile_icon_wrapper {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    left: 10px;
+    cursor: pointer;
+
+    > img {
+      width: 100%;
+      opacity: 0.6;
+    }
+  }
+
+  .mobile_logo_wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 120px;
+    cursor: pointer;
+
+    > img {
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  .mobile_search_box {
+    z-index: 2;
+    display: none;
+    &_active {
+      @extend .mobile_search_box;
+      z-index: 4;
+      position: absolute;
+      display: flex;
+      align-items: center;
+      height: 78px;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: $white;
+      transition: all 1s;
+      max-width: 700px;
+      padding-right: 60px;
+    }
+
+    .mobile_search_input {
+      position: relative;
+      display: none;
+      height: 100%;
+      width: 100%;
+      margin-left: 60px;
+      color: $dark;
+      font-size: $searchTabFont;
+      border: none;
+      &::placeholder {
+        @extend .mobile_search_input;
+        color: $gray;
+        font-size: $searchTabFont;
+      }
+      &_active {
+        display: flex;
+        @extend .mobile_search_input;
+        min-width: 300px;
+      }
+    }
+
+    .icon_wrapper {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      left: 10px;
+      cursor: pointer;
+
+      > img {
+        width: 100%;
+        opacity: 0.6;
+      }
+    }
+
+    .close_wrapper {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      right: 10px;
+      cursor: pointer;
+
+      > img {
+        width: 100%;
+        opacity: 0.6;
+      }
+    }
+  }
+
+  .mobile_search_result {
+    z-index: 2;
+    display: none;
+    transition: all 1s;
+    &_active {
+      @extend .desktop_search_result;
+      z-index: 4;
+      position: fixed;
+      display: block;
+      width: 100%;
+      max-width: 700px;
+      height: 100%;
+      padding-left: 60px;
+      padding-right: 60px;
+      left: 0;
+      top: 78px;
+      background-color: $white;
+      color: $white;
+      font-size: 0px;
+      transition: all 1s;
+      overflow-x: hidden;
+      overflow-y: scroll;
+      // &::-webkit-scrollbar {
+      //   /* 스크롤바 숨기기 */
+      //   display: none;
+      //   /* Hide scrollbar for IE, Edge and Firefox */
+      //   -ms-overflow-style: none; /* IE and Edge */
+      //   scrollbar-width: none; /* Firefox */
+      // }
+      &::-webkit-scrollbar {
+        width: 6px;
+      }
+      /* 스크롤바 막대 설정*/
+      &::-webkit-scrollbar-thumb {
+        /* 스크롤바 막대 높이 설정 */
+        height: 16%;
+        background-color: $signiture;
+        /* 스크롤바 둥글게 설정 */
+        border-radius: 10px;
+      }
+      /* 스크롤바 뒷 배경 설정*/
+      ::-webkit-scrollbar-track {
+        background-color: rgba(0, 0, 0, 0);
+      }
+      .result {
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        min-height: 78px;
+        color: $dark;
+        font-size: $searchTabFont;
+        cursor: pointer;
+        &:hover {
+          color: $signiture;
+          transition: all 0.2s;
+        }
+      }
+
+      .mobile_search_loading_wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        color: $dark;
+        font-size: $titleFont;
+
+        .img_wrapper {
+          position: relative;
+          width: 50px;
+          height: 50px;
+
+          > img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+.search_mobile_background {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  &_active {
+    z-index: 3;
+    @extend .search_mobile_background;
+
+    @include mobile() {
+      display: flex;
+    }
+    @include tab() {
+      display: flex;
+    }
+    @include desktop() {
+      display: none;
+    }
+  }
+}

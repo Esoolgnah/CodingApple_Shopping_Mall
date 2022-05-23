@@ -158,6 +158,10 @@
               @extend .goCartButton;
               background-color: $signiture;
             }
+            > a {
+              @extend %buttonSize;
+              right: 0;
+            }
           }
         }
       }
