@@ -37,7 +37,7 @@ export const App = () => {
 
   return `
   <div>
-    <div>
+    <div id='modal_zone'>
     </div>
     <div>
       ${Header()}
