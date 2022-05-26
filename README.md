@@ -270,4 +270,5 @@ fail
 
 ## 구현 설명
 
-[구현 설명은 노션링크로 대체하겠습니다.](https://www.notion.so/hangloose/74f0ed89390d4514bd3c4c9c1d3f7ced)
+[🚀 구현 설명은 노션링크로 대체하겠습니다.](https://www.notion.so/hangloose/74f0ed89390d4514bd3c4c9c1d3f7ced)
+
