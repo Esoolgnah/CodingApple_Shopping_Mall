@@ -38,6 +38,7 @@ export const App = () => {
   return `
   <div>
     <div id='modal_zone'>
+      ${isOnAddModal ? AddModal : ''}
     </div>
     <div>
       ${Header()}

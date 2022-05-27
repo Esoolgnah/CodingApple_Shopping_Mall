@@ -1288,7 +1288,7 @@ var App = function App() {
     }
   }
 
-  return "\n  <div>\n    <div id='modal_zone'>\n    </div>\n    <div>\n      ".concat((0, _Header.Header)(), "\n    </div>\n    <div id='page_switch'>\n      ").concat(router === 'mainPage' ? (0, _MainPage.MainPage)() : router === 'detailPage' ? (0, _DetailPage.DetailPage)(param) : 'Error', "\n    </div>\n  </div>\n");
+  return "\n  <div>\n    <div id='modal_zone'>\n      ".concat(isOnAddModal ? _AddModal.AddModal : '', "\n    </div>\n    <div>\n      ").concat((0, _Header.Header)(), "\n    </div>\n    <div id='page_switch'>\n      ").concat(router === 'mainPage' ? (0, _MainPage.MainPage)() : router === 'detailPage' ? (0, _DetailPage.DetailPage)(param) : 'Error', "\n    </div>\n  </div>\n");
 };
 
 exports.App = App;
@@ -1328,7 +1328,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52320" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53860" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
