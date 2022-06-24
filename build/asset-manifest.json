@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "./static/css/main.1d7657d8.chunk.css",
-    "main.js": "./static/js/main.75b0aa61.chunk.js",
-    "main.js.map": "./static/js/main.75b0aa61.chunk.js.map",
-    "runtime-main.js": "./static/js/runtime-main.200253dc.js",
-    "runtime-main.js.map": "./static/js/runtime-main.200253dc.js.map",
+    "main.css": "./static/css/main.d9bed8b0.chunk.css",
+    "main.js": "./static/js/main.12e0235e.chunk.js",
+    "main.js.map": "./static/js/main.12e0235e.chunk.js.map",
+    "runtime-main.js": "./static/js/runtime-main.c7d5841e.js",
+    "runtime-main.js.map": "./static/js/runtime-main.c7d5841e.js.map",
     "static/css/2.1909e014.chunk.css": "./static/css/2.1909e014.chunk.css",
-    "static/js/2.3bcce0d6.chunk.js": "./static/js/2.3bcce0d6.chunk.js",
-    "static/js/2.3bcce0d6.chunk.js.map": "./static/js/2.3bcce0d6.chunk.js.map",
+    "static/js/2.5ffba008.chunk.js": "./static/js/2.5ffba008.chunk.js",
+    "static/js/2.5ffba008.chunk.js.map": "./static/js/2.5ffba008.chunk.js.map",
     "static/css/3.b5536b1a.chunk.css": "./static/css/3.b5536b1a.chunk.css",
-    "static/js/3.9fa4fe4d.chunk.js": "./static/js/3.9fa4fe4d.chunk.js",
-    "static/js/3.9fa4fe4d.chunk.js.map": "./static/js/3.9fa4fe4d.chunk.js.map",
+    "static/js/3.351ff4c3.chunk.js": "./static/js/3.351ff4c3.chunk.js",
+    "static/js/3.351ff4c3.chunk.js.map": "./static/js/3.351ff4c3.chunk.js.map",
     "index.html": "./index.html",
     "static/css/2.1909e014.chunk.css.map": "./static/css/2.1909e014.chunk.css.map",
     "static/css/3.b5536b1a.chunk.css.map": "./static/css/3.b5536b1a.chunk.css.map",
-    "static/css/main.1d7657d8.chunk.css.map": "./static/css/main.1d7657d8.chunk.css.map",
-    "static/js/2.3bcce0d6.chunk.js.LICENSE.txt": "./static/js/2.3bcce0d6.chunk.js.LICENSE.txt",
+    "static/css/main.d9bed8b0.chunk.css.map": "./static/css/main.d9bed8b0.chunk.css.map",
+    "static/js/2.5ffba008.chunk.js.LICENSE.txt": "./static/js/2.5ffba008.chunk.js.LICENSE.txt",
     "static/media/cartNotice.2414a9ea.jpeg": "./static/media/cartNotice.2414a9ea.jpeg",
     "static/media/slick-theme.css": "./static/media/slick.c94f7671.ttf",
     "static/media/slide1.776e1244.png": "./static/media/slide1.776e1244.png",
@@ -31,10 +31,10 @@
     "static/media/spinner.d3fbaf2b.gif": "./static/media/spinner.d3fbaf2b.gif"
   },
   "entrypoints": [
-    "static/js/runtime-main.200253dc.js",
+    "static/js/runtime-main.c7d5841e.js",
     "static/css/2.1909e014.chunk.css",
-    "static/js/2.3bcce0d6.chunk.js",
-    "static/css/main.1d7657d8.chunk.css",
-    "static/js/main.75b0aa61.chunk.js"
+    "static/js/2.5ffba008.chunk.js",
+    "static/css/main.d9bed8b0.chunk.css",
+    "static/js/main.12e0235e.chunk.js"
   ]
 }
