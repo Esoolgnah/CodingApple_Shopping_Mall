@@ -13,34 +13,27 @@
 
 /* bootStrap class*/
 
-.btn-primary {
-  background-color: black;
-  border: black;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  border: none;
+.btn:active,
+button:active,
+.btn:focus,
+button:focus,
+.btn:hover,
+button:hover {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
 }
 
-.btn-primary:hover {
-  background-color: black;
-}
-
+.btn-primary,
+.btn-primary:hover,
 .btn-primary:focus,
 .btn-primary:active {
   background-color: black;
-  outline: none;
-  box-shadow: none;
-  border: none;
-}
-
-.btn-default {
-  border: none;
-}
-
-.btn:focus,
-.btn:active {
-  outline: none;
-  box-shadow: none;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
 }
 
 td {
