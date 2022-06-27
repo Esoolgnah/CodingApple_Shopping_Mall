@@ -12,7 +12,8 @@
 }
 
 /* bootStrap class*/
-
+.btn,
+button,
 .btn:active,
 button:active,
 .btn:focus,
