@@ -62,7 +62,7 @@ function Cart(props) {
 
   /* 숫자에 콤마(,)추가하여 표시 */
   const addComma = (num) => {
-    var regexp = /\B(?=(\d{3})+(?!\d))/g;
+    let regexp = /\B(?=(\d{3})+(?!\d))/g;
     return num.toString().replace(regexp, ',');
   };
 
